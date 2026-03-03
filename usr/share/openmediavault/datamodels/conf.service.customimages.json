@@ -1,0 +1,19 @@
+{
+  "type": "config",
+  "id": "conf.service.customimages",
+  "queryinfo": {
+    "xpath": "//services/customimages",
+    "iterable": false,
+    "idproperty": ""
+  },
+  "properties": {
+    "imagepath": {
+      "type": "string"
+    },
+    "blendmode": {
+      "type": "string",
+      "enum": ["normal", "hard-light"],
+      "default": "normal"
+    }
+  }
+}

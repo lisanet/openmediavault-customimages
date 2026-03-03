@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+. /usr/share/openmediavault/scripts/helper-functions
+
+case "$1" in
+  remove)
+    omv_config_delete "/config/services/customimages"
+    monit restart omv-engined || true
+    ;;
+esac
+
+#DEBHELPER#
+exit 0

@@ -1,0 +1,13 @@
+Source: openmediavault-customimages
+Section: net
+Priority: optional
+Maintainer: Simone Karin Lehmann <skl@lisanet.de>
+Build-Depends: debhelper (>= 12)
+Standards-Version: 4.5.1
+
+Package: openmediavault-customimages
+Architecture: all
+Depends: openmediavault (>= 7.0)
+Description: OpenMediaVault Custom Images Plugin
+ Ermöglicht das Setzen eines benutzerdefinierten JPEG-Images für die Login-Seite
+ und eines Blend-Modes (normal oder hard-light) über die OMV-Weboberfläche.

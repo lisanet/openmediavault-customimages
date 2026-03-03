@@ -1,0 +1,8 @@
+---
+data:
+  - id: omv-services-customimages
+    path: '/services/customimages'
+    text: 'Custom Images'
+    class: 'navigation-link'
+    icon: 'mdi:image-edit'
+    position: 90

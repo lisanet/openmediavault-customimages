@@ -1,0 +1,35 @@
+---
+data:
+  name: omv-services-customimages-settings-form-page
+  type: formPage
+  config:
+    request:
+      service: Customimages
+      get:
+        method: getSettings
+      post:
+        method: setSettings
+    fields:
+      - type: textInput
+        name: imagepath
+        label: _('JPEG-Pfad')
+        hint: _('Absoluter Pfad zur JPEG-Datei, z.B. /srv/dev-disk-by-uuid-xxx/logo.jpg')
+        validators:
+          required: true
+          patternType: 'absolutePath'
+
+      - type: select
+        name: blendmode
+        label: _('Blend-Mode')
+        hint: _('Blend-Mode für das Login-Image')
+        value: 'normal'
+        store:
+          data:
+            - ['normal', _('Normal')]
+            - ['hard-light', _('Hard Light')]
+        validators:
+          required: true
+
+    buttons:
+      - template: submit
+      - template: cancel
