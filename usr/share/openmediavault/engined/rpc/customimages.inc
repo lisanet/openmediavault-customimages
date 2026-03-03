@@ -20,7 +20,7 @@ class OMVRpcServiceCustomimages extends ServiceAbstract
 
     public function getName()
     {
-        return 'customimages';
+        return 'CustomImages';
     }
 
     public function initialize()

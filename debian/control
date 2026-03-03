@@ -9,5 +9,4 @@ Package: openmediavault-customimages
 Architecture: all
 Depends: openmediavault (>= 7.0)
 Description: OpenMediaVault Custom Images Plugin
- Ermöglicht das Setzen eines benutzerdefinierten JPEG-Images für die Login-Seite
- und eines Blend-Modes (normal oder hard-light) über die OMV-Weboberfläche.
+  Enables setting a custom image for the login page and a blend mode.

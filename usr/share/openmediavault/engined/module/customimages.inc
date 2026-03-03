@@ -14,14 +14,14 @@ class OMVModuleCustomimages extends ServiceAbstract
     {
         return 'customimages';
     }
-
+/*
     public function applyConfig()
     {
         $cmd = new \OMV\System\Process('omv-salt', 'deploy', 'run', '--no-color', 'customimages');
         $cmd->setRedirect2to1();
         $cmd->execute();
     }
-
+*/
     public function bindListeners(Dispatcher $dispatcher)
     {
         $dispatcher->addListener(
