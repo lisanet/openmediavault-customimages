@@ -1,6 +1,7 @@
 {
   "type": "config",
   "id": "conf.service.customimages",
+  "title": "Custom Images",
   "queryinfo": {
     "xpath": "//services/customimages",
     "iterable": false,

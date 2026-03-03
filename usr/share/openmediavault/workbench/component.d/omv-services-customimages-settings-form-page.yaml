@@ -34,6 +34,3 @@ data:
     buttons:
       - template: submit
       - template: cancel
-        execute:
-          type: url
-          url: "/services"

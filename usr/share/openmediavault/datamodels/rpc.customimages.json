@@ -1,16 +1,19 @@
 [
   {
+    "type": "rpc",
     "id": "rpc.customimages.setSettings",
-    "type": "object",
-    "properties": {
-      "imagepath": {
-        "type": "string",
-        "minLength": 1
-      },
-      "blendmode": {
-        "type": "string",
-        "enum": ["normal", "hard-light"]
-      }
+    "params": {
+        "type": "object",
+        "properties": {
+          "imagepath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "blendmode": {
+            "type": "string",
+            "enum": ["normal", "hard-light"]
+          }
+        }
     }
   }
 ]

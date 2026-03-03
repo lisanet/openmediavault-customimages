@@ -1,0 +1,8 @@
+version: "1.0"
+type: route
+data:
+  url: "/services/customimages"
+  title: _("Custom Images")
+  editing: true
+  notificationTitle: _("Updated Custom Images settings.")
+  component: omv-services-customimages-settings-form-page
