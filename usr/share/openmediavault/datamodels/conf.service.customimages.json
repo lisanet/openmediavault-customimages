@@ -9,7 +9,7 @@
   "properties": {
     "loginimage": {
       "type": "string",
-      "default": "/var/www/openmediavault/assets/images/login.jpg"
+      "default": "/usr/share/openmediavault/customimages/default/login.jpg"
     },
     "blendmode": {
       "type": "string",
@@ -18,7 +18,7 @@
     },
     "standbyimage": {
       "type": "string",
-      "default": "/var/www/openmediavault/assets/images/standby.jpg"
+      "default": "/usr/share/openmediavault/customimages/default/standby.jpg"
     },
     "standbyblendmode": {
       "type": "string",
@@ -27,7 +27,7 @@
     },
     "shutdownimage": {
       "type": "string",
-      "default": "/var/www/openmediavault/assets/images/shutdown.jpg"
+      "default": "/usr/share/openmediavault/customimages/default/shutdown.jpg"
     },
     "shutdownblendmode": {
       "type": "string",
