@@ -1,1 +1,1 @@
-DPkg::Post-Invoke {"/usr/sbin/patchomv-customimages";};
+DPkg::Post-Invoke {"[ -x /usr/sbin/patchomv-customimages ] && /usr/sbin/patchomv-customimages || true";};
