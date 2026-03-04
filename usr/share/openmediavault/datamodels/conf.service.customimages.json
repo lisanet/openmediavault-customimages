@@ -4,11 +4,10 @@
   "title": "Custom Images",
   "queryinfo": {
     "xpath": "//services/customimages",
-    "iterable": false,
-    "idproperty": ""
+    "iterable": false
   },
   "properties": {
-    "imagepath": {
+    "loginimage": {
       "type": "string"
     },
     "blendmode": {

@@ -5,7 +5,7 @@ configure_customimages:
   file.managed:
     - name: /etc/customimages.conf
     - contents: |
-        CUSTOMLOGIN_IMAGE="{{ config['imagepath'] }}"
+        CUSTOMLOGIN_IMAGE="{{ config['loginimage'] }}"
         CUSTOMLOGIN_BLENDMODE="{{ config['blendmode'] }}"
     - user: root
     - group: root
@@ -14,6 +14,6 @@ configure_customimages:
 # 2) Dein Patch-Script aufrufen
 run_customimages_script:
   cmd.run:
-    - name: sudo patchomv-image "{{ config['imagepath'] }}" "{{ config['blendmode'] }}"
+    - name: sudo patchomv-image "{{ config['loginimage'] }}" "{{ config['blendmode'] }}"
     - require:
       - file: configure_customimages

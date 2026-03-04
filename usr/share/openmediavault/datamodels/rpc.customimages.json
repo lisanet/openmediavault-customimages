@@ -1,11 +1,11 @@
 [
   {
     "type": "rpc",
-    "id": "rpc.customimages.setSettings",
+    "id": "rpc.customimages.setsettings",
     "params": {
         "type": "object",
         "properties": {
-          "imagepath": {
+          "loginimage": {
             "type": "string",
             "minLength": 1
           },
