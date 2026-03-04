@@ -1,28 +1,27 @@
 version: "1.0"
 type: component
 data:
-  name: omv-services-customimages-settings-form-page
+  name: omv-services-customimages-form-page
   type: formPage
   config:
     request:
-      service: Customimages
+      service: CustomImages
       get:
         method: getSettings
       post:
         method: setSettings
     fields:
-      - type: textInput
-        name: imagepath
-        label: _('JPEG-Pfad')
-        hint: _('Absoluter Pfad zur JPEG-Datei, z.B. /srv/dev-disk-by-uuid-xxx/logo.jpg')
+      - type: textarea
+        name: loginimage
+        label: _('Login screen image')
+        hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/logo.jpg')
+        rows: 1
         validators:
           required: true
-          patternType: 'absolutePath'
-
       - type: select
         name: blendmode
-        label: _('Blend-Mode')
-        hint: _('Blend-Mode für das Login-Image')
+        label: _('Blend Mode')
+        hint: _('Blend mode for the login image')
         value: 'normal'
         store:
           data:
@@ -30,7 +29,9 @@ data:
             - ['hard-light', _('Hard Light')]
         validators:
           required: true
-
     buttons:
       - template: submit
       - template: cancel
+        execute:
+          type: url
+          url: "/services"
