@@ -11,6 +11,40 @@ change_login_image()
   fi
 }
 
+change_standby_image()
+{
+  local standbyimage="$1"
+  [ ! -e "$standbyimage" ] && return
+  change=$(cmp "$standbyimage" /var/www/openmediavault/assets/images/standby.jpg)
+  if [ -n "$change" ]; then
+    echo "Set custom standby background"
+    sudo cp "$standbyimage" /var/www/openmediavault/assets/images/standby.jpg
+  fi
+}
+
+change_shutdown_image()
+{
+  local shutdownimage="$1"
+  [ ! -e "$shutdownimage" ] && return
+  change=$(cmp "$shutdownimage" /var/www/openmediavault/assets/images/shutdown.jpg)
+  if [ -n "$change" ]; then
+    echo "Set custom shutdown background"
+    sudo cp "$shutdownimage" /var/www/openmediavault/assets/images/shutdown.jpg
+  fi
+}
+
+change_image()
+{
+    local type="$1"
+    local image="$2"
+    [ ! -e "$image" ] && return
+    change=$(cmp "$image" "/var/www/openmediavault/assets/images/$type.jpg")
+    if [ -n "$change" ]; then
+        echo "Set custom $type background"
+        sudo cp "$image" "/var/www/openmediavault/assets/images/$type.jpg"
+    fi
+}
+
 login_blend_mode()
 {
   # change login background blend mode
@@ -18,10 +52,54 @@ login_blend_mode()
   local blendmode="$1" 
   local file=$(grep -l "mix-blend-mode:.*;}omv-login" /var/www/openmediavault/*js)
   if [ -n "$file" ]; then
-    grep -q "mix-blend-mode:$blendmode" "$file" && change=no || change=yes
+    grep -q "login.jpg);object-fit:cover;mix-blend-mode:$blendmode" "$file" && change=no || change=yes
     if [ "$change" = "yes" ]; then
       echo "Set login background blend mode to $blendmode"
-      sudo sed -i -e "s|mix-blend-mode:.*;}omv-login|mix-blend-mode:$blendmode;}omv-login|" "$file"
+      sudo sed -i -e "s|\(login.jpg);object-fit:cover;mix-blend-mode:\)[^}]*}|\1$blendmode;}|" "$file"
+    fi
+  fi
+}
+
+standby_blend_mode()
+{
+  # change standby background blend mode
+  # blend modes see https://developer.mozilla.org/de/docs/Web/CSS/Reference/Properties/mix-blend-mode
+  local blendmode="$1" 
+  local file=$(grep -l "standby.jpg" /var/www/openmediavault/*js)
+  if [ -n "$file" ]; then
+    grep -q "standby.jpg);object-fit:cover;mix-blend-mode:$blendmode" "$file" && change=no || change=yes
+    if [ "$change" = "yes" ]; then
+      echo "Set standby background blend mode to $blendmode"
+      sudo sed -i -e "s|\(standby.jpg);object-fit:cover;mix-blend-mode:\)[^}]*}|\1$blendmode}|" "$file"
+    fi
+  fi
+}
+
+shutdown_blend_mode()
+{
+  # change shutdown background blend mode
+  # blend modes see https://developer.mozilla.org/de/docs/Web/CSS/Reference/Properties/mix-blend-mode
+  local blendmode="$1" 
+  local file=$(grep -l "shutdown.jpg" /var/www/openmediavault/*js)
+  if [ -n "$file" ]; then
+    grep -q "shutdown.jpg);object-fit:cover;mix-blend-mode:$blendmode" "$file" && change=no || change=yes
+    if [ "$change" = "yes" ]; then
+      echo "Set shutdown background blend mode to $blendmode"
+      sudo sed -i -e "s|\(shutdown.jpg);object-fit:cover;mix-blend-mode:\)[^}]*}|\1$blendmode}|" "$file"
+    fi
+  fi
+}
+
+blend_mode()
+{
+  local type="$1"
+  local blendmode="$2"
+  local file=$(grep -l "$type.jpg" /var/www/openmediavault/*js)
+  if [ -n "$file" ]; then
+    grep -q "$type.jpg);object-fit:cover;mix-blend-mode:$blendmode" "$file" && change=no || change=yes
+    if [ "$change" = "yes" ]; then
+      echo "Set $type background blend mode to $blendmode"
+      sudo sed -i -e "s|\(\($type.jpg);object-fit:cover;mix-blend-mode:\)[^}]*}|\1$blendmode}|" "$file"
     fi
   fi
 }
@@ -30,7 +108,9 @@ login_blend_mode()
 
 . /etc/customimages.conf
 
-if [ -n "$LOGIN_IMAGE" ]; then
-  change_login_image "$LOGIN_IMAGE"
-  login_blend_mode "$LOGIN_BLENDMODE"
-fi
+[ -n "$LOGIN_IMAGE" ] && change_image "login" "$LOGIN_IMAGE"
+[ -n "$LOGIN_BLENDMODE" ] && blend_mode "login" "$LOGIN_BLENDMODE"
+[ -n "$STANDBY_IMAGE" ] && change_image "standby" "$STANDBY_IMAGE"
+[ -n "$STANDBY_BLENDMODE" ] && blend_mode "standby" "$STANDBY_BLENDMODE"
+[ -n "$SHUTDOWN_IMAGE" ] && change_image "shutdown" "$SHUTDOWN_IMAGE"
+[ -n "$SHUTDOWN_BLENDMODE" ] && blend_mode "shutdown" "$SHUTDOWN_BLENDMODE"

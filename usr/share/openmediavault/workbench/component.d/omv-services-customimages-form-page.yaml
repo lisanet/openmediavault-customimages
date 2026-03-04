@@ -11,22 +11,64 @@ data:
       post:
         method: setSettings
     fields:
+      - type: divider
+        title: _('Login Screen')
       - type: textarea
         name: loginimage
         label: _('Login screen image')
         hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/logo.jpg')
+        value: '/var/www/openmediavault/assets/images/login.jpg'
         rows: 1
-        validators:
-          required: true
       - type: select
         name: blendmode
         label: _('Blend Mode')
         hint: _('Blend mode for the login image')
-        value: 'normal'
+        value: 'hard-light'
         store:
           data:
             - ['normal', _('Normal')]
             - ['hard-light', _('Hard Light')]
+            - ['luminosity', _('Luminosity')]
+        validators:
+          required: true
+      - type: divider
+        title: _('Standby Screen')
+      - type: textarea
+        name: standbyimage
+        label: _('Standby screen image')
+        hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/standby.jpg')
+        value: '/var/www/openmediavault/assets/images/standby.jpg'
+        rows: 1
+      - type: select
+        name: standbyblendmode
+        label: _('Blend Mode')
+        hint: _('Blend mode for the standby image')
+        value: 'luminosity'
+        store:
+          data:
+            - ['normal', _('Normal')]
+            - ['hard-light', _('Hard Light')]
+            - ['luminosity', _('Luminosity')]
+        validators:
+          required: true
+      - type: divider
+        title: _('Shutdown Screen')
+      - type: textarea
+        name: shutdownimage
+        label: _('Shutdown screen image')
+        hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/shutdown.jpg')
+        value: '/var/www/openmediavault/assets/images/shutdown.jpg'
+        rows: 1
+      - type: select
+        name: shutdownblendmode
+        label: _('Blend Mode')
+        hint: _('Blend mode for the shutdown image')
+        value: 'luminosity'
+        store:
+          data:
+            - ['normal', _('Normal')]
+            - ['hard-light', _('Hard Light')]
+            - ['luminosity', _('Luminosity')]
         validators:
           required: true
     buttons:

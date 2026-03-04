@@ -8,12 +8,31 @@
   },
   "properties": {
     "loginimage": {
-      "type": "string"
+      "type": "string",
+      "default": "/var/www/openmediavault/assets/images/login.jpg"
     },
     "blendmode": {
       "type": "string",
-      "enum": ["normal", "hard-light"],
-      "default": "normal"
+      "enum": ["normal", "hard-light", "luminosity"],
+      "default": "hard-light"
+    },
+    "standbyimage": {
+      "type": "string",
+      "default": "/var/www/openmediavault/assets/images/standby.jpg"
+    },
+    "standbyblendmode": {
+      "type": "string",
+      "enum": ["normal", "hard-light", "luminosity"],
+      "default": "luminosity"
+    },
+    "shutdownimage": {
+      "type": "string",
+      "default": "/var/www/openmediavault/assets/images/shutdown.jpg"
+    },
+    "shutdownblendmode": {
+      "type": "string",
+      "enum": ["normal", "hard-light", "luminosity"],
+      "default": "luminosity"
     }
   }
 }

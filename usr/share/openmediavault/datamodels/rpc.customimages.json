@@ -6,12 +6,25 @@
         "type": "object",
         "properties": {
           "loginimage": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "blendmode": {
             "type": "string",
-            "enum": ["normal", "hard-light"]
+            "enum": ["normal", "hard-light", "luminosity"]
+          },
+          "standbyimage": {
+            "type": "string"
+          },
+          "standbyblendmode": {
+            "type": "string",
+            "enum": ["normal", "hard-light", "luminosity"]
+          },
+          "shutdownimage": {
+            "type": "string"
+          },
+          "shutdownblendmode": {
+            "type": "string",
+            "enum": ["normal", "hard-light", "luminosity"]
           }
         }
     }

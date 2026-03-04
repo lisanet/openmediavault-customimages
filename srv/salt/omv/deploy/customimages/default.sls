@@ -7,6 +7,10 @@ configure_customimages:
     - contents: |
         LOGIN_IMAGE="{{ config['loginimage'] }}"
         LOGIN_BLENDMODE="{{ config['blendmode'] }}"
+        STANDBY_IMAGE="{{ config['standbyimage'] }}"
+        STANDBY_BLENDMODE="{{ config['standbyblendmode'] }}"
+        SHUTDOWN_IMAGE="{{ config['shutdownimage'] }}"
+        SHUTDOWN_BLENDMODE="{{ config['shutdownblendmode'] }}"
     - user: root
     - group: root
     - mode: 644
