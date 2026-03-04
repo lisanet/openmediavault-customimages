@@ -99,7 +99,7 @@ blend_mode()
     grep -q "$type.jpg);object-fit:cover;mix-blend-mode:$blendmode" "$file" && change=no || change=yes
     if [ "$change" = "yes" ]; then
       echo "Set $type background blend mode to $blendmode"
-      sudo sed -i -e "s|\(\($type.jpg);object-fit:cover;mix-blend-mode:\)[^}]*}|\1$blendmode}|" "$file"
+      sudo sed -i -e "s|\($type.jpg);object-fit:cover;mix-blend-mode:\)[^}]*}|\1$blendmode}|" "$file"
     fi
   fi
 }
@@ -118,3 +118,5 @@ fi
 [ -n "$STANDBY_BLENDMODE" ] && blend_mode "standby" "$STANDBY_BLENDMODE"
 [ -n "$SHUTDOWN_IMAGE" ] && change_image "shutdown" "$SHUTDOWN_IMAGE"
 [ -n "$SHUTDOWN_BLENDMODE" ] && blend_mode "shutdown" "$SHUTDOWN_BLENDMODE"
+
+exit 0
