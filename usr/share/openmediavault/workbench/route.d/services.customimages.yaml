@@ -5,4 +5,4 @@ data:
   title: _("Custom Images")
   editing: true
   notificationTitle: _("Updated Custom Images settings.")
-  component: omv-services-customimages-settings-form-page
+  component: omv-services-customimages-form-page
