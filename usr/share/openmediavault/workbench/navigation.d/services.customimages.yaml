@@ -1,0 +1,7 @@
+version: "1.0"
+type: navigation-item
+data:
+  path: 'services.customimages'
+  text: 'Custom Images'
+  icon: 'mdi:image-edit'
+  url: '/services/customimages'
