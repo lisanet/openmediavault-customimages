@@ -12,7 +12,7 @@ case "$1" in
     omv-confdbadm create "conf.service.customimages"
     # Deploy the configuration for autoshutdown services.
     echo "Deploying customimages service configuration"
-    #LC_ALL=C.UTF-8 omv-salt deploy run --no-color --quiet customimages
+    LC_ALL=C.UTF-8 omv-salt deploy run --no-color --quiet customimages
     ;;
   abort-upgrade|abort-remove|abort-deconfigure)
     ;;
