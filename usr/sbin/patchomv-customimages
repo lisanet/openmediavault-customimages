@@ -1,0 +1,36 @@
+#!/bin/bash
+
+change_login_image()
+{
+  local loginimage="$1"
+  [ ! -e "$loginimage" ] && return
+  change=$(cmp "$loginimage" /var/www/openmediavault/assets/images/login.jpg)
+  if [ -n "$change" ]; then
+    echo "Set custom login background"
+    sudo cp "$loginimage" /var/www/openmediavault/assets/images/login.jpg
+  fi
+}
+
+login_blend_mode()
+{
+  # change login background blend mode
+  # blend modes see https://developer.mozilla.org/de/docs/Web/CSS/Reference/Properties/mix-blend-mode
+  local blendmode="$1" 
+  local file=$(grep -l "mix-blend-mode:.*;}omv-login" /var/www/openmediavault/*js)
+  if [ -n "$file" ]; then
+    grep -q "mix-blend-mode:$blendmode" "$file" && change=no || change=yes
+    if [ "$change" = "yes" ]; then
+      echo "Set login background blend mode to $blendmode"
+      sudo sed -i -e "s|mix-blend-mode:.*;}omv-login|mix-blend-mode:$blendmode;}omv-login|" "$file"
+    fi
+  fi
+}
+
+# ---- main ----
+
+. /etc/customimages.conf
+
+if [ -n "$LOGIN_IMAGE" ]; then
+  change_login_image "$LOGIN_IMAGE"
+  login_blend_mode "$LOGIN_BLENDMODE"
+fi

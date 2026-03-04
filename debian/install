@@ -1,4 +1,5 @@
 etc/customimages.conf  etc/
+usr/sbin/patchomv-customimages  usr/sbin/
 usr/share/openmediavault/confdb/create.d/conf.service.customimages.sh  usr/share/openmediavault/confdb/create.d/
 usr/share/openmediavault/datamodels/conf.service.customimages.json  usr/share/openmediavault/datamodels/
 usr/share/openmediavault/datamodels/rpc.customimages.json  usr/share/openmediavault/datamodels/
