@@ -4,19 +4,9 @@
  * @author    Simone Karin Lehmann <skl@lisanet.de>
  */
 
-use OMV\Config\Database;
-use OMV\Config\ConfigObject;
-use OMV\Rpc\ServiceAbstract;
 
-class OMVRpcServiceCustomimages extends ServiceAbstract
+class OMVRpcServiceCustomImages extends \OMV\Rpc\ServiceAbstract
 {
-    private $database;
-    private $dataModelPath = 'conf.service.customimages';
-
-    public function __construct(Database $database = null)
-    {
-        $this->database = $database ?: Database::getInstance();
-    }
 
     public function getName()
     {
@@ -31,23 +21,25 @@ class OMVRpcServiceCustomimages extends ServiceAbstract
 
     public function getSettings($params, $context)
     {
-        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
-        $object = $this->database->get($this->dataModelPath);
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
+        // Get the configuration object.
+        $db = \OMV\Config\Database::getInstance();
+        $object = $db->get("conf.service.customimages");
         return $object->getAssoc();
     }
 
     public function setSettings($params, $context)
     {
-        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
-        $this->validateMethodParams($params, 'rpc.customimages.setSettings');
-
-        $object = $this->database->get($this->dataModelPath);
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, "rpc.customimages.setsettings");
+        // Get the existing configuration object.
+        $db = \OMV\Config\Database::getInstance();
+        $object = $db->get("conf.service.customimages");
         $object->setAssoc($params);
-        $this->database->set($object);
-
-        // Modul als "dirty" markieren, damit der Apply-Button erscheint
-        $this->setModuleDirty('customimages');
-
+        $db->set($object);
         return $object->getAssoc();
     }
 }
