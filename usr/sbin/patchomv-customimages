@@ -1,38 +1,5 @@
 #!/bin/bash
 
-change_login_image()
-{
-  local loginimage="$1"
-  [ ! -e "$loginimage" ] && return
-  change=$(cmp "$loginimage" /var/www/openmediavault/assets/images/login.jpg)
-  if [ -n "$change" ]; then
-    echo "Set custom login background"
-    sudo cp "$loginimage" /var/www/openmediavault/assets/images/login.jpg
-  fi
-}
-
-change_standby_image()
-{
-  local standbyimage="$1"
-  [ ! -e "$standbyimage" ] && return
-  change=$(cmp "$standbyimage" /var/www/openmediavault/assets/images/standby.jpg)
-  if [ -n "$change" ]; then
-    echo "Set custom standby background"
-    sudo cp "$standbyimage" /var/www/openmediavault/assets/images/standby.jpg
-  fi
-}
-
-change_shutdown_image()
-{
-  local shutdownimage="$1"
-  [ ! -e "$shutdownimage" ] && return
-  change=$(cmp "$shutdownimage" /var/www/openmediavault/assets/images/shutdown.jpg)
-  if [ -n "$change" ]; then
-    echo "Set custom shutdown background"
-    sudo cp "$shutdownimage" /var/www/openmediavault/assets/images/shutdown.jpg
-  fi
-}
-
 change_image()
 {
     local type="$1"
@@ -45,53 +12,9 @@ change_image()
     fi
 }
 
-login_blend_mode()
-{
-  # change login background blend mode
-  # blend modes see https://developer.mozilla.org/de/docs/Web/CSS/Reference/Properties/mix-blend-mode
-  local blendmode="$1" 
-  local file=$(grep -l "mix-blend-mode:.*;}omv-login" /var/www/openmediavault/*js)
-  if [ -n "$file" ]; then
-    grep -q "login.jpg);object-fit:cover;mix-blend-mode:$blendmode" "$file" && change=no || change=yes
-    if [ "$change" = "yes" ]; then
-      echo "Set login background blend mode to $blendmode"
-      sudo sed -i -e "s|\(login.jpg);object-fit:cover;mix-blend-mode:\)[^}]*}|\1$blendmode;}|" "$file"
-    fi
-  fi
-}
-
-standby_blend_mode()
-{
-  # change standby background blend mode
-  # blend modes see https://developer.mozilla.org/de/docs/Web/CSS/Reference/Properties/mix-blend-mode
-  local blendmode="$1" 
-  local file=$(grep -l "standby.jpg" /var/www/openmediavault/*js)
-  if [ -n "$file" ]; then
-    grep -q "standby.jpg);object-fit:cover;mix-blend-mode:$blendmode" "$file" && change=no || change=yes
-    if [ "$change" = "yes" ]; then
-      echo "Set standby background blend mode to $blendmode"
-      sudo sed -i -e "s|\(standby.jpg);object-fit:cover;mix-blend-mode:\)[^}]*}|\1$blendmode}|" "$file"
-    fi
-  fi
-}
-
-shutdown_blend_mode()
-{
-  # change shutdown background blend mode
-  # blend modes see https://developer.mozilla.org/de/docs/Web/CSS/Reference/Properties/mix-blend-mode
-  local blendmode="$1" 
-  local file=$(grep -l "shutdown.jpg" /var/www/openmediavault/*js)
-  if [ -n "$file" ]; then
-    grep -q "shutdown.jpg);object-fit:cover;mix-blend-mode:$blendmode" "$file" && change=no || change=yes
-    if [ "$change" = "yes" ]; then
-      echo "Set shutdown background blend mode to $blendmode"
-      sudo sed -i -e "s|\(shutdown.jpg);object-fit:cover;mix-blend-mode:\)[^}]*}|\1$blendmode}|" "$file"
-    fi
-  fi
-}
-
 blend_mode()
 {
+  # blend modes see https://developer.mozilla.org/de/docs/Web/CSS/Reference/Properties/mix-blend-mode
   local type="$1"
   local blendmode="$2"
   local file=$(grep -l "$type.jpg" /var/www/openmediavault/*js)
