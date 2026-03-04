@@ -4,8 +4,8 @@ usr/share/openmediavault/datamodels/conf.service.customimages.json  usr/share/op
 usr/share/openmediavault/datamodels/rpc.customimages.json  usr/share/openmediavault/datamodels/
 usr/share/openmediavault/engined/rpc/customimages.inc   usr/share/openmediavault/engined/rpc/
 usr/share/openmediavault/engined/module/customimages.inc   usr/share/openmediavault/engined/module/
-usr/share/openmediavault/workbench/component.d/omv-services-customimages-settings-form-page.yaml  usr/share/openmediavault/workbench/component.d/
-usr/share/openmediavault/workbench/navigation.d/omv-services-customimages.yaml   usr/share/openmediavault/workbench/navigation.d/
+usr/share/openmediavault/workbench/component.d/omv-services-customimages-form-page.yaml  usr/share/openmediavault/workbench/component.d/
+usr/share/openmediavault/workbench/navigation.d/services.customimages.yaml   usr/share/openmediavault/workbench/navigation.d/
 usr/share/openmediavault/workbench/route.d/services.customimages.yaml   usr/share/openmediavault/workbench/route.d/
 srv/salt/omv/deploy/customimages/default.sls  srv/salt/omv/deploy/customimages/
 srv/salt/omv/deploy/customimages/init.sls  srv/salt/omv/deploy/customimages/

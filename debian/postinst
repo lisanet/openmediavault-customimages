@@ -5,14 +5,14 @@ set -e
 
 case "$1" in
   configure)
-    # Datenbank initialisieren
-    omv_config_update "/config/services/customimages"
-    # Confdb-Eintrag anlegen
-    if [ -x /usr/share/openmediavault/confdb/create.d/conf.service.customimages.sh ]; then
-      /usr/share/openmediavault/confdb/create.d/conf.service.customimages.sh
-    fi
-    # engined neu starten
-    monit restart omv-engined || true
+    # Activate trigger to rebuild workbench configuration files.
+    dpkg-trigger update-workbench
+    # Initialize and migrate configuration database.
+    echo "Updating configuration database ..."
+    omv-confdbadm create "conf.service.customimages"
+    # Deploy the configuration for autoshutdown services.
+    echo "Deploying customimages service configuration"
+    #LC_ALL=C.UTF-8 omv-salt deploy run --no-color --quiet customimages
     ;;
   abort-upgrade|abort-remove|abort-deconfigure)
     ;;
