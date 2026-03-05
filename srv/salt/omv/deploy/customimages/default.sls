@@ -1,6 +1,5 @@
 {% set config = salt['omv_conf.get']('conf.service.customimages') %}
 
-# 1) Konfigurationsdatei in /etc/openmediavault/ schreiben
 configure_customimages:
   file.managed:
     - name: /etc/customimages.conf
@@ -15,7 +14,6 @@ configure_customimages:
     - group: root
     - mode: 644
 
-# 2) Dein Patch-Script aufrufen
 run_customimages_script:
   cmd.run:
     - name: patchomv-customimages
