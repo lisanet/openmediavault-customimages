@@ -9,4 +9,5 @@ Package: openmediavault-customimages
 Architecture: all
 Depends: openmediavault (>= 7.0)
 Description: OpenMediaVault Custom Images Plugin
-  Enables setting a custom image for the login page and a blend mode.
+  Enables setting a custom background images and blend modes for the 
+  login screen, the standby screenand the shutdown screen.
