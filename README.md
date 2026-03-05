@@ -22,8 +22,8 @@ and reload the page.
 Set the blend mode for each image to your liking.
 
 - `Normal` displays the image as it is
-- `Hard Light` overlays a blue tint
-- `Luminosity` lowers the luminosity of the image
+- `Hard Light` applies a blue overlay with strong contrast
+- `Luminosity` applies a blue overlay more evenly, preserving the images's brightness
 
 ### Installation
 
