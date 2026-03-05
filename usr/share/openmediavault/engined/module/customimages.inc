@@ -1,7 +1,7 @@
 <?php
 /**
- * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
- * @author    Simone Karin Lehmann <skl@lisanet.de>
+ * @license   MIT 
+ * @author    Simone Karin Lehmann
  */
 
 
