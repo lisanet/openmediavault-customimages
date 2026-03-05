@@ -3,5 +3,5 @@ type: navigation-item
 data:
   path: 'services.customimages'
   text: 'Custom Images'
-  icon: 'mdi:image-edit'
+  icon: 'mdi:image'
   url: '/services/customimages'
