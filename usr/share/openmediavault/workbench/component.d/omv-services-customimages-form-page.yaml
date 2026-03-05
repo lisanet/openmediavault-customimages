@@ -23,6 +23,8 @@ data:
         hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/some/path/login.jpg')
         value: '/usr/share/openmediavault/customimages/default/login.jpg'
         rows: 1
+        validators:
+          required: true
       - type: select
         name: blendmode
         label: _('Blend Mode')
@@ -43,6 +45,8 @@ data:
         hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/some/path/standby.jpg')
         value: '/usr/share/openmediavault/customimages/default/standby.jpg'
         rows: 1
+        validators:
+          required: true
       - type: select
         name: standbyblendmode
         label: _('Blend Mode')
@@ -63,6 +67,8 @@ data:
         hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/some/path/shutdown.jpg')
         value: '/usr/share/openmediavault/customimages/default/shutdown.jpg'
         rows: 1
+        validators:
+          required: true
       - type: select
         name: shutdownblendmode
         label: _('Blend Mode')
