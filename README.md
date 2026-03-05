@@ -1,6 +1,6 @@
 ## Custom Images - Plugin for openmediavault
 
-This is a plugin for openmediavault. 
+This is a plugin for openmediavault 8.1.1+
 
 It allows you to set custom images and blend modes for the login screen, the standby screen
 and the shutdown screen.
