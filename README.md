@@ -1,69 +1,83 @@
-## Custom Images - Plugin for openmediavault
+# openmediavault Custom Images Plugin
 
-This is a plugin for openmediavault 8.1.1+
+A plugin for **openmediavault 8.1.1+** that allows you to set custom images and blend modes for the login, standby, and shutdown screens.
 
-It allows you to set custom images and blend modes for the login screen, the standby screen
-and the shutdown screen.
+The plugin uses an **APT hook** to ensure that custom images and blend modes remain applied even after openmediavault updates.
 
-The plugin uses a hook on apt to ensure, that even after an update of openmediavault, the images and
-blend modes are still aplied.
+## Features
 
-To reset to default images, either use the images provided by this pluign (see below) or unintall the
-plugin and reinstall openmediavault.
+* Custom images for:
 
-### Images
+  * Login screen
+  * Standby screen
+  * Shutdown screen
+* Adjustable blend modes for each screen
+* Persistent configuration using an APT hook (survives openmediavault updates)
+* Includes default image set
 
-A set of default images provided is provided in `/usr/share/openmediavault/customimages`, named `login.jpg`,
-`standby.jpg` and `shutdown.jpg`.
+## Images
 
-There are also the default images of openmediavault 8.1.0 in `/usr/share/openmediavault/customimages/default`.
+A set of images is included in:
 
-For custom images, just specify the corresponding path.
+`/usr/share/openmediavault/customimages`
 
-New images should show up immediately. In some situations it may be necessary to clear the browser cache
-and reload the page.
+Files:
 
-### Blend Modes
+* `login.jpg`
+* `standby.jpg`
+* `shutdown.jpg`
 
-Set the blend mode for each image to your liking.
+The original images from **openmediavault 8.1.0** are available in:
 
-- `Normal` displays the image as it is
-- `Hard Light` applies a blue overlay with strong contrast
-- `Luminosity` applies a blue overlay more evenly, preserving the images's brightness
+`/usr/share/openmediavault/customimages/default`
 
-### Installation
+To use custom images, simply specify the desired file path.
 
-Download the package from the release page and install it with 
+New images should appear immediately. If they do not, clear your browser cache and reload the page.
+
+## Blend Modes
+
+You can select a blend mode for each image:
+
+| Mode       | Description                                               |
+| ---------- | --------------------------------------------------------- |
+| Normal     | Displays the image without modification                   |
+| Hard Light | Applies a blue overlay with high contrast                 |
+| Luminosity | Applies a blue overlay while preserving brightness        |
+
+## Installation
+
+Download the `.deb` package from the **Releases** page and install it:
 
 ```
 sudo dpkg -i <packagename.deb>
 ```
 
-### Uninstall
+## Uninstall
 
-To uninstall the plugin, use apt to purge all of the plugins contents **and** its configuration 
-files and helper scripts.
+To completely remove the plugin including configuration files and helper scripts, run:
 
 ```
 sudo apt purge openmediavault-customimages
 ```
 
-Then reinstall openmediavault to reset the default images provide by openmediavault or wait for the next 
-update of openmediavault. To reinstall openmediavault do
+Afterwards, reinstall openmediavault to restore the default images, or wait for the next openmediavault update.
+To reinstall openmediavault manually:
 
 ```
 sudo apt reinstall openmediavault
 ```
 
-### License
+## License
 
-Feel free to copy, modify, distribute this plugin under the terms of the MIT License.
+This project is licensed under the **MIT License**.
 
-### Contributing
+## Contributing
 
-Bug reports, technical improvements, and pull requests are welcome.
+Bug reports, feature suggestions, and pull requests are welcome.
 
-### Disclaimer
+## Disclaimer
 
-This plugin is provided "as is", without warranty of any kind.
-Always verify results and keep backups of your original media.
+This plugin is provided **"as is"**, without warranty of any kind.
+
+Always verify the results and keep backups of your original media.
