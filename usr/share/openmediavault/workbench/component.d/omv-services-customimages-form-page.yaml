@@ -17,12 +17,11 @@ data:
     fields:
       - type: divider
         title: _('Login Screen')
-      - type: textarea
+      - type: textInput
         name: loginimage
         label: _('Login screen image')
         hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/some/path/login.jpg')
         value: '/usr/share/openmediavault/customimages/default/login.jpg'
-        rows: 1
         validators:
           required: true
       - type: select
@@ -39,12 +38,11 @@ data:
           required: true
       - type: divider
         title: _('Standby Screen')
-      - type: textarea
+      - type: textInput
         name: standbyimage
         label: _('Standby screen image')
         hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/some/path/standby.jpg')
         value: '/usr/share/openmediavault/customimages/default/standby.jpg'
-        rows: 1
         validators:
           required: true
       - type: select
@@ -61,12 +59,11 @@ data:
           required: true
       - type: divider
         title: _('Shutdown Screen')
-      - type: textarea
+      - type: textInput
         name: shutdownimage
         label: _('Shutdown screen image')
         hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/some/path/shutdown.jpg')
         value: '/usr/share/openmediavault/customimages/default/shutdown.jpg'
-        rows: 1
         validators:
           required: true
       - type: select
