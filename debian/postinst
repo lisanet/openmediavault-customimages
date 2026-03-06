@@ -9,7 +9,7 @@ case "$1" in
     dpkg-trigger update-workbench
     # Initialize and migrate configuration database.
     echo "Updating configuration database ..."
-    omv-confdbadm create "conf.service.customimages"
+    omv-confdbadm create "conf.system.customimages"
     # Deploy the configuration for autoshutdown services.
     echo "Deploying customimages service configuration"
     LC_ALL=C.UTF-8 omv-salt deploy run --no-color --quiet customimages

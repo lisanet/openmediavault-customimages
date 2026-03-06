@@ -1,7 +1,7 @@
 version: "1.0"
 type: component
 data:
-  name: omv-services-customimages-form-page
+  name: omv-system-customimages-form-page
   type: formPage
   config:
     request:
@@ -15,6 +15,19 @@ data:
         text: _("A set of images is provided in /usr/share/openmediavault/customimages/, named login.jpg, standby.jpg, and shutdown.jpg.<br/>Default images are in /usr/share/openmediavault/customimages/default/, named accordingly.")
         dismissible: true
     fields:
+      - type: divider
+        title: _('Image Folder')
+      - type: hidden
+        name: rootfsref
+        value: "79684322-3eac-11ea-a974-63a080abab18"
+        submitValue: false
+      - type: folderBrowser
+        name: imagefolder
+        label: _('Custom images folder')
+        hint: _('Absolute path to the folder containing the custom images, e.g., /srv/dev-disk-by-uuid-xxx/some/path/')
+        value: '/usr/share/openmediavault/customimages/'
+        dirType: mntent
+        dirRefIdField: rootfsref
       - type: divider
         title: _('Login Screen')
       - type: textInput
@@ -83,4 +96,4 @@ data:
       - template: cancel
         execute:
           type: url
-          url: "/services"
+          url: "/system"

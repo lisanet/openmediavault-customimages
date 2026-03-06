@@ -1,4 +1,4 @@
-{% set config = salt['omv_conf.get']('conf.service.customimages') %}
+{% set config = salt['omv_conf.get']('conf.system.customimages') %}
 
 configure_customimages:
   file.managed:

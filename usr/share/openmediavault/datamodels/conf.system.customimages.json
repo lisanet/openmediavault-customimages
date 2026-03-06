@@ -1,12 +1,16 @@
 {
   "type": "config",
-  "id": "conf.service.customimages",
+  "id": "conf.system.customimages",
   "title": "Custom Images",
   "queryinfo": {
-    "xpath": "//services/customimages",
+    "xpath": "//system/customimages",
     "iterable": false
   },
   "properties": {
+    "imagefolder": {
+      "type": "string",
+      "default": "/usr/share/openmediavault/customimages/"
+    },
     "loginimage": {
       "type": "string",
       "default": "/usr/share/openmediavault/customimages/default/login.jpg"

@@ -5,6 +5,10 @@
     "params": {
         "type": "object",
         "properties": {
+          "imagefolder": {
+            "type": "string",
+            "required": true
+          },
           "loginimage": {
             "type": "string"
           },

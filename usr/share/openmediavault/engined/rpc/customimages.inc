@@ -25,7 +25,7 @@ class OMVRpcServiceCustomImages extends \OMV\Rpc\ServiceAbstract
         $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $object = $db->get("conf.service.customimages");
+        $object = $db->get("conf.system.customimages");
         return $object->getAssoc();
     }
 
@@ -37,7 +37,7 @@ class OMVRpcServiceCustomImages extends \OMV\Rpc\ServiceAbstract
         $this->validateMethodParams($params, "rpc.customimages.setsettings");
         // Get the existing configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $object = $db->get("conf.service.customimages");
+        $object = $db->get("conf.system.customimages");
         $object->setAssoc($params);
         $db->set($object);
         return $object->getAssoc();

@@ -7,7 +7,7 @@ case "$1" in
   purge)
     # Activate trigger to rebuild workbench configuration files.
     dpkg-trigger update-workbench
-    omv_config_delete "/config/services/customimages"
+    omv_config_delete "/config/system/customimages"
     ;;
   remove)
     dpkg-trigger update-workbench

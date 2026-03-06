@@ -2,7 +2,7 @@ etc/customimages.conf  etc/
 etc/apt/apt.conf.d/*  etc/apt/apt.conf.d/
 usr/sbin/patchomv-customimages  usr/sbin/
 usr/share/openmediavault/customimages  usr/share/openmediavault/
-usr/share/openmediavault/confdb/create.d/conf.service.customimages.sh  usr/share/openmediavault/confdb/create.d/
+usr/share/openmediavault/confdb/create.d/conf.system.customimages.sh  usr/share/openmediavault/confdb/create.d/
 usr/share/openmediavault/datamodels/*  usr/share/openmediavault/datamodels/
 usr/share/openmediavault/engined/*   usr/share/openmediavault/engined/
 usr/share/openmediavault/workbench/*  usr/share/openmediavault/workbench/

@@ -17,7 +17,7 @@ class OMVModuleCustomImages extends \OMV\Engine\Module\ServiceAbstract
     {
         $dispatcher->addListener(
             OMV_NOTIFY_MODIFY,
-            'org.openmediavault.conf.service.customimages',
+            'org.openmediavault.conf.system.customimages',
             [$this, 'setDirty']
         );
     }
