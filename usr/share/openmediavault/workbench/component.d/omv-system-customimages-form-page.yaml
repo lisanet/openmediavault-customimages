@@ -30,70 +30,84 @@ data:
         dirRefIdField: rootfsref
       - type: divider
         title: _('Login Screen')
-      - type: textInput
-        name: loginimage
-        label: _('Login screen image')
-        hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/some/path/login.jpg')
-        value: '/usr/share/openmediavault/customimages/default/login.jpg'
-        validators:
-          required: true
-      - type: select
-        name: blendmode
-        label: _('Blend Mode')
-        hint: _('Blend mode for the login image (default is Hard Light)')
-        value: 'hard-light'
-        store:
-          data:
-            - ['normal', _('Normal')]
-            - ['hard-light', _('Hard Light')]
-            - ['luminosity', _('Luminosity')]
-        validators:
-          required: true
+      - type: container
+        fields:
+          - type: textInput
+            name: loginimage
+            label: _('Login screen image')
+            hint: _('Filename of the JPEG image, e.g., login.jpg')
+            value: 'login.jpg'
+            validators:
+              required: true
+          - type: select
+            name: blendmode
+            label: _('Blend Mode')
+            hint: _('Blend mode for the login image (default is Hard Light)')
+            value: 'hard-light'
+            store:
+              data:
+                - ['normal', _('Normal')]
+                - ['hard-light', _('Hard Light')]
+                - ['luminosity', _('Luminosity')]
+            validators:
+              required: true
       - type: divider
         title: _('Standby Screen')
-      - type: textInput
-        name: standbyimage
-        label: _('Standby screen image')
-        hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/some/path/standby.jpg')
-        value: '/usr/share/openmediavault/customimages/default/standby.jpg'
-        validators:
-          required: true
-      - type: select
-        name: standbyblendmode
-        label: _('Blend Mode')
-        hint: _('Blend mode for the standby image (default is Luminosity)')
-        value: 'luminosity'
-        store:
-          data:
-            - ['normal', _('Normal')]
-            - ['hard-light', _('Hard Light')]
-            - ['luminosity', _('Luminosity')]
-        validators:
-          required: true
+      - type: container
+        fields:
+          - type: textInput
+            name: standbyimage
+            label: _('Standby screen image')
+            hint: _('Filename of the JPEG image, e.g., standby.jpg')
+            value: 'standby.jpg'
+            validators:
+              required: true
+          - type: select
+            name: standbyblendmode
+            label: _('Blend Mode')
+            hint: _('Blend mode for the standby image (default is Luminosity)')
+            value: 'luminosity'
+            store:
+              data:
+                - ['normal', _('Normal')]
+                - ['hard-light', _('Hard Light')]
+                - ['luminosity', _('Luminosity')]
+            validators:
+              required: true
       - type: divider
         title: _('Shutdown Screen')
-      - type: textInput
-        name: shutdownimage
-        label: _('Shutdown screen image')
-        hint: _('Absolute path to the JPEG file, e.g., /srv/dev-disk-by-uuid-xxx/some/path/shutdown.jpg')
-        value: '/usr/share/openmediavault/customimages/default/shutdown.jpg'
-        validators:
-          required: true
-      - type: select
-        name: shutdownblendmode
-        label: _('Blend Mode')
-        hint: _('Blend mode for the shutdown image (default is Luminosity)')
-        value: 'luminosity'
-        store:
-          data:
-            - ['normal', _('Normal')]
-            - ['hard-light', _('Hard Light')]
-            - ['luminosity', _('Luminosity')]
-        validators:
-          required: true
+      - type: container
+        fields:
+          - type: textInput
+            name: shutdownimage
+            label: _('Shutdown screen image')
+            hint: _('Filename of the JPEG image, e.g., shutdown.jpg')
+            value: 'shutdown.jpg'
+            validators:
+              required: true
+          - type: select
+            name: shutdownblendmode
+            label: _('Blend Mode')
+            hint: _('Blend mode for the shutdown image (default is Luminosity)')
+            value: 'luminosity'
+            store:
+              data:
+                - ['normal', _('Normal')]
+                - ['hard-light', _('Hard Light')]
+                - ['luminosity', _('Luminosity')]
+            validators:
+              required: true
     buttons:
       - template: submit
       - template: cancel
         execute:
           type: url
           url: "/system"
+      - text: _('Reset to Defaults')
+        execute:
+          type: request
+          request:
+            service: CustomImages
+            method: resetSettings
+            successNotification: _("Images and Blend Modes have been reset to defaults.")
+            successUrl: "/system"

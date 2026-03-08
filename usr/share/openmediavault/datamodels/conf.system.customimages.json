@@ -9,11 +9,11 @@
   "properties": {
     "imagefolder": {
       "type": "string",
-      "default": "/usr/share/openmediavault/customimages/"
+      "default": "/usr/share/openmediavault/customimages/default/"
     },
     "loginimage": {
       "type": "string",
-      "default": "/usr/share/openmediavault/customimages/default/login.jpg"
+      "default": "login.jpg"
     },
     "blendmode": {
       "type": "string",
@@ -22,7 +22,7 @@
     },
     "standbyimage": {
       "type": "string",
-      "default": "/usr/share/openmediavault/customimages/default/standby.jpg"
+      "default": "standby.jpg"
     },
     "standbyblendmode": {
       "type": "string",
@@ -31,7 +31,7 @@
     },
     "shutdownimage": {
       "type": "string",
-      "default": "/usr/share/openmediavault/customimages/default/shutdown.jpg"
+      "default": "shutdown.jpg"
     },
     "shutdownblendmode": {
       "type": "string",

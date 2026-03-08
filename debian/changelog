@@ -1,6 +1,13 @@
+openmediavault-customimages (8.0.1-1) stable; urgency=low
+
+  * Use file select for image path
+
+ -- Simone Karin Lehmann <skl@lisanet.de>  Fri, 06 Mar 2026 11:12:51 +0100
+
 openmediavault-customimages (8.0.0-1) stable; urgency=low
 
   * Initial release.
 
  -- Simone Karin Lehmann <skl@lisanet.de>  Mon, 03 Mar 2025 12:00:00 +0100
+
 

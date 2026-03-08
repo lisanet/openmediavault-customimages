@@ -3,7 +3,7 @@
 change_image()
 {
     local type="$1"
-    local image="$2"
+    local image=$(echo "$2" | tr -s /)
     [ ! -e "$image" ] && return
     change=$(cmp "$image" "/var/www/openmediavault/assets/images/$type.jpg")
     if [ -n "$change" ]; then
@@ -35,11 +35,11 @@ else
   exit 0
 fi
 
-[ -n "$LOGIN_IMAGE" ] && change_image "login" "$LOGIN_IMAGE"
+[ -n "$LOGIN_IMAGE" ] && change_image "login" "${IMAGE_FOLDER}/${LOGIN_IMAGE}"
 [ -n "$LOGIN_BLENDMODE" ] && blend_mode "login" "$LOGIN_BLENDMODE"
-[ -n "$STANDBY_IMAGE" ] && change_image "standby" "$STANDBY_IMAGE"
+[ -n "$STANDBY_IMAGE" ] && change_image "standby" "${IMAGE_FOLDER}/${STANDBY_IMAGE}"
 [ -n "$STANDBY_BLENDMODE" ] && blend_mode "standby" "$STANDBY_BLENDMODE"
-[ -n "$SHUTDOWN_IMAGE" ] && change_image "shutdown" "$SHUTDOWN_IMAGE"
+[ -n "$SHUTDOWN_IMAGE" ] && change_image "shutdown" "${IMAGE_FOLDER}/${SHUTDOWN_IMAGE}"
 [ -n "$SHUTDOWN_BLENDMODE" ] && blend_mode "shutdown" "$SHUTDOWN_BLENDMODE"
 
 exit 0
