@@ -68,6 +68,10 @@ To reinstall openmediavault manually:
 sudo apt reinstall openmediavault
 ```
 
+## Screenshot
+
+![Screenshot](screenshot.jpg)
+
 ## License
 
 This project is licensed under the **MIT License**.
