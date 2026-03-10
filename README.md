@@ -70,6 +70,8 @@ sudo apt reinstall openmediavault
 
 ## Screenshot
 
+To give you an impression of the plugins UI:
+
 ![Screenshot](screenshot.jpg)
 
 ## License
