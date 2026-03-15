@@ -9,7 +9,7 @@ case "$1" in
     dpkg-trigger update-workbench
     omv_config_delete "/config/system/customimages"
     ;;
-  remove)
+  remove|upgrade|failed-upgrade)
     dpkg-trigger update-workbench
     ;;
   abort-upgrade|abort-remove|abort-deconfigure)
