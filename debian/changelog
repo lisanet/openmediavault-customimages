@@ -1,3 +1,9 @@
+openmediavault-customimages (8.0.2-1) stable; urgency=low
+
+  * change default login image
+
+ -- Simone Karin Lehmann <skl@lisanet.de>  Sun, 15 Mar 2026 21:59:26 +0100
+
 openmediavault-customimages (8.0.1-1) stable; urgency=low
 
   * Use file select for image path
