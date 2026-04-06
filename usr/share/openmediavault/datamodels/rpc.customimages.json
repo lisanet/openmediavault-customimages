@@ -13,25 +13,13 @@
             "type": "string",
             "pattern": ".*[.](jpg|jpeg)$"
           },
-          "blendmode": {
-            "type": "string",
-            "enum": ["normal", "hard-light", "luminosity"]
-          },
           "standbyimage": {
             "type": "string",
             "pattern": ".*[.](jpg|jpeg)$"
           },
-          "standbyblendmode": {
-            "type": "string",
-            "enum": ["normal", "hard-light", "luminosity"]
-          },
           "shutdownimage": {
             "type": "string",
             "pattern": ".*[.](jpg|jpeg)$"
-          },
-          "shutdownblendmode": {
-            "type": "string",
-            "enum": ["normal", "hard-light", "luminosity"]
           }
         }
     }

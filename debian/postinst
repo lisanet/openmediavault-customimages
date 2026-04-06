@@ -10,8 +10,11 @@ case "$1" in
     # Initialize and migrate configuration database.
     echo "Updating configuration database ..."
     omv-confdbadm create "conf.system.customimages"
+    if [ -n "${2}" ]; then
+        omv-confdbadm migrate "conf.system.customimages" "${2}"
+    fi
     # Deploy the configuration for autoshutdown services.
-    echo "Deploying customimages service configuration"
+    echo "Deploying customimages service configuration ..."
     LC_ALL=C.UTF-8 omv-salt deploy run --no-color --quiet customimages
     ;;
   abort-upgrade|abort-remove|abort-deconfigure)

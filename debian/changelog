@@ -1,3 +1,10 @@
+openmediavault-customimages (8.0.3-1) stable; urgency=low
+
+  * remove blend mode as its removed on omv 8.2.2 too
+  * include new default images from omv 8.2.2
+
+ -- Simone Karin Lehmann <skl@lisanet.de>  Mon, 06 Apr 2026 18:15:06 +0200
+
 openmediavault-customimages (8.0.2-1) stable; urgency=low
 
   * change default login image

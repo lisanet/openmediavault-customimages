@@ -1,8 +1,8 @@
 # openmediavault Custom Images Plugin
 
-A plugin for **openmediavault 8.1.1+** that allows you to set custom images and blend modes for the login, standby, and shutdown screens.
+A plugin for **openmediavault 8.1.1+** that allows you to set custom images for the login, standby, and shutdown screens.
 
-The plugin uses an **APT hook** to ensure that custom images and blend modes remain applied even after openmediavault updates.
+The plugin uses an **APT hook** to ensure that custom images remain applied even after openmediavault updates.
 
 ## Features
 
@@ -11,7 +11,6 @@ The plugin uses an **APT hook** to ensure that custom images and blend modes rem
   * Login screen
   * Standby screen
   * Shutdown screen
-* Adjustable blend modes for each screen
 * Persistent configuration using an APT hook (survives openmediavault updates)
 * Includes default image set
 
@@ -27,23 +26,13 @@ Files:
 * `standby.jpg`
 * `shutdown.jpg`
 
-The original images from **openmediavault 8.1.0** are available in:
+The original images from **openmediavault 8.2.2** are available in:
 
 `/usr/share/openmediavault/customimages/default`
 
 To use custom images, simply specify the desired file path.
 
 New images should appear immediately. If they do not, clear your browser cache and reload the page.
-
-## Blend Modes
-
-You can select a blend mode for each image:
-
-| Mode       | Description                                               |
-| ---------- | --------------------------------------------------------- |
-| Normal     | Displays the image without modification                   |
-| Hard Light | Applies a blue overlay with high contrast                 |
-| Luminosity | Applies a blue overlay while preserving brightness        |
 
 ## Installation
 

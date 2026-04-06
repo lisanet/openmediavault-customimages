@@ -15,28 +15,13 @@
       "type": "string",
       "default": "login.jpg"
     },
-    "blendmode": {
-      "type": "string",
-      "enum": ["normal", "hard-light", "luminosity"],
-      "default": "hard-light"
-    },
     "standbyimage": {
       "type": "string",
       "default": "standby.jpg"
     },
-    "standbyblendmode": {
-      "type": "string",
-      "enum": ["normal", "hard-light", "luminosity"],
-      "default": "luminosity"
-    },
     "shutdownimage": {
       "type": "string",
       "default": "shutdown.jpg"
-    },
-    "shutdownblendmode": {
-      "type": "string",
-      "enum": ["normal", "hard-light", "luminosity"],
-      "default": "luminosity"
     }
   }
 }

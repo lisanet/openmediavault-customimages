@@ -55,11 +55,8 @@ class OMVRpcServiceCustomImages extends \OMV\Rpc\ServiceAbstract
         $object = $db->get("conf.system.customimages");
         $object->set("imagefolder",       "/usr/share/openmediavault/customimages/default/");
         $object->set("loginimage",        "login.jpg");
-        $object->set("blendmode",         "hard-light");
         $object->set("standbyimage",      "standby.jpg");
-        $object->set("standbyblendmode",  "luminosity");
         $object->set("shutdownimage",     "shutdown.jpg");
-        $object->set("shutdownblendmode", "luminosity");
         $db->set($object);
         return $object->getAssoc();
     }
