@@ -57,6 +57,8 @@ class OMVRpcServiceCustomImages extends \OMV\Rpc\ServiceAbstract
         $object->set("loginimage",        "login.jpg");
         $object->set("standbyimage",      "standby.jpg");
         $object->set("shutdownimage",     "shutdown.jpg");
+        $object->set("lighttheme",        "0");
+        $object->set("darktheme",         "0");
         $db->set($object);
         return $object->getAssoc();
     }

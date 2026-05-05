@@ -22,6 +22,14 @@
     "shutdownimage": {
       "type": "string",
       "default": "shutdown.jpg"
+    },
+    "lighttheme": {
+      "type": "boolean",
+      "default": false
+    },
+    "darktheme": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

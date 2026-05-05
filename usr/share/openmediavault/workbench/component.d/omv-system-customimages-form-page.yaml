@@ -55,6 +55,18 @@ data:
         value: 'shutdown.jpg'
         validators:
           required: true
+      - type: divider
+        title: _('Mode Themes')
+      - type: checkbox
+        name: lighttheme
+        label: _('Light mode')
+        hint: _('New light color theme.')
+        value: false
+      - type: checkbox
+        name: darktheme
+        label: _('Dark mode')
+        hint: _('Modified dark color theme.')
+        value: false
     buttons:
       - template: submit
       - template: cancel

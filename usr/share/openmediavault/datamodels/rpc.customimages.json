@@ -20,6 +20,14 @@
           "shutdownimage": {
             "type": "string",
             "pattern": ".*[.](jpg|jpeg)$"
+          },
+          "lighttheme": {
+            "type": "boolean",
+            "required": true
+          },
+          "darktheme": {
+            "type": "boolean",
+            "required": true
           }
         }
     }
