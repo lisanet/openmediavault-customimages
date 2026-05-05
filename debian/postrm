@@ -8,6 +8,7 @@ case "$1" in
     # Activate trigger to rebuild workbench configuration files.
     dpkg-trigger update-workbench
     omv_config_delete "/config/system/customimages"
+    rm -f /var/www/openmediavault/theme.css
     ;;
   remove|upgrade|failed-upgrade)
     dpkg-trigger update-workbench
