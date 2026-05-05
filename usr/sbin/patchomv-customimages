@@ -22,4 +22,10 @@ if [ -e "/etc/customimages.conf" ]; then
     [ -n "$SHUTDOWN_IMAGE" ] && change_image "shutdown" "${IMAGE_FOLDER}/${SHUTDOWN_IMAGE}"
 fi
 
+grep -q 'patchomv' "/var/www/openmediavault/index.html" || change=yes && change=no
+if [ "$change" = "yes" ]; then
+    sudo sed -i -e 's|</head>|<!--patchomv--><link rel="stylesheet" href="/theme.css"></head>|' /var/www/openmediavault/index.html
+fi
+
+
 exit 0
