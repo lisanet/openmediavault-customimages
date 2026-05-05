@@ -1,8 +1,8 @@
 # openmediavault Custom Images Plugin
 
-A plugin for **openmediavault 8.1.1+** that allows you to set custom images for the login, standby, and shutdown screens.
+A plugin for **openmediavault 8.1.1+** that allows you to set custom images for the login, standby, and shutdown screens and to set a new light mode theme and a slightly modified dark mode theme.
 
-The plugin uses an **APT hook** to ensure that custom images remain applied even after openmediavault updates.
+The plugin uses an **APT hook** to ensure that custom images and themes remain applied even after openmediavault updates.
 
 ## Features
 
@@ -11,6 +11,11 @@ The plugin uses an **APT hook** to ensure that custom images remain applied even
   * Login screen
   * Standby screen
   * Shutdown screen
+
+* Mode Themes for
+  * Light Mode
+  * Dark Mode
+
 * Persistent configuration using an APT hook (survives openmediavault updates)
 * Includes default image set
 
@@ -50,7 +55,7 @@ To completely remove the plugin including configuration files and helper scripts
 sudo apt purge openmediavault-customimages
 ```
 
-Afterwards, reinstall openmediavault to restore the default images, or wait for the next openmediavault update.
+Afterwards, reinstall openmediavault to restore the default images and themes, or wait for the next openmediavault update.
 To reinstall openmediavault manually:
 
 ```
@@ -62,6 +67,10 @@ sudo apt reinstall openmediavault
 To give you an impression of the plugins UI:
 
 ![Screenshot](screenshot.jpg)
+
+## New Mode Themes
+
+[See here](Modes.md) for a quick look at the new mode themes. 
 
 ## License
 
