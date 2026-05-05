@@ -1,0 +1,29 @@
+/* mode themes */
+{%- if config['lighttheme'] -%}
+.omv-navigation-bar {
+    background-color: #fff;
+}
+.mat-drawer-container {
+    background-color: #f0f0f0;
+}
+.mat-list-item-content {
+    color: #000;
+}
+.omv-navigation-bar .header .logo {
+    background-image: url(./assets/images/openmediavault_logo_simple_dark.svg) !important
+}
+.omv-dark-theme .omv-navigation-bar {
+    background-color: #303e48;
+}
+.omv-dark-theme .mat-list-item-content {
+    color: #fff;
+}
+.omv-dark-theme .omv-navigation-bar .header .logo {
+    background-image: url(./assets/images/openmediavault_logo_simple.svg) !important
+}
+{% endif -%}
+{% if config['darktheme'] -%}
+.omv-dark-theme .mat-drawer-container {
+    background-color: #3c4a53;
+}
+{% endif -%}
