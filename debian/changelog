@@ -1,3 +1,11 @@
+openmediavault-customimages (8.1.0-1) stable; urgency=low
+
+  * add new light color theme
+  * modify dark color theme
+  * rename plugin title in UI
+
+ -- Simone Karin Lehmann <skl@lisanet.de>  Tue, 05 May 2026 20:59:08 +0200
+
 openmediavault-customimages (8.0.3-1) stable; urgency=low
 
   * remove blend mode as its removed on omv 8.2.2 too
