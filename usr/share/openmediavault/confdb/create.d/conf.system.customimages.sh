@@ -9,6 +9,8 @@ if ! omv_config_exists "/config/system/customimages"; then
   omv_config_add_key "/config/system/customimages" "loginimage" "login.jpg"
   omv_config_add_key "/config/system/customimages" "standbyimage" "standby.jpg"
   omv_config_add_key "/config/system/customimages" "shutdownimage" "shutdown.jpg"
+  omv_config_add_key "/config/system/customimages" "lighttheme" "0"
+  omv_config_add_key "/config/system/customimages" "darktheme" "0"
 fi
 
 exit 0
