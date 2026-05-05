@@ -1,3 +1,9 @@
+openmediavault-customimages (8.1.1-1) stable; urgency=low
+
+  * fix apt hook script to patch index.html
+
+ -- Simone Karin Lehmann <skl@lisanet.de>  Tue, 05 May 2026 23:32:30 +0200
+
 openmediavault-customimages (8.1.0-1) stable; urgency=low
 
   * add new light color theme
