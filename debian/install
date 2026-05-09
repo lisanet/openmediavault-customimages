@@ -1,6 +1,6 @@
 etc/customimages.conf  etc/
 etc/apt/apt.conf.d/*  etc/apt/apt.conf.d/
-usr/sbin/patchomv-customimages  usr/sbin/
+usr/sbin/*  usr/sbin/
 usr/share/openmediavault/customimages  usr/share/openmediavault/
 usr/share/openmediavault/confdb/*  usr/share/openmediavault/confdb/
 usr/share/openmediavault/datamodels/*  usr/share/openmediavault/datamodels/
