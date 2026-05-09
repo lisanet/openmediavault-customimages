@@ -1,0 +1,53 @@
+omv-login-page .topbar.topbar
+{ background-color:hsl(var(--hue) var(--sat) var(--light) / 0.54); }
+.ngx-datatable.single-selection .datatable-body-row.active,
+.ngx-datatable.single-selection .datatable-body-row.active .datatable-row-group,
+.ngx-datatable.multi-selection .datatable-body-row.active,
+.ngx-datatable.multi-selection .datatable-body-row.active .datatable-row-group,
+.ngx-datatable.multi-click-selection .datatable-body-row.active,
+.ngx-datatable.multi-click-selection .datatable-body-row.active .datatable-row-group
+{ background-color:hsl(var(--hue) var(--sat) var(--light)) !important; }
+.omv-dark-theme .ngx-datatable.single-selection .datatable-body-row.active,
+.omv-dark-theme .ngx-datatable.single-selection .datatable-body-row.active .datatable-row-group,
+.omv-dark-theme .ngx-datatable.multi-selection .datatable-body-row.active,
+.omv-dark-theme .ngx-datatable.multi-selection .datatable-body-row.active .datatable-row-group,
+.omv-dark-theme .ngx-datatable.multi-click-selection .datatable-body-row.active,
+.omv-dark-theme .ngx-datatable.multi-click-selection .datatable-body-row.active .datatable-row-group
+{ color: #fff !important; }
+omv-datatable .ngx-datatable.single-selection .datatable-body-row.active.active:hover,
+omv-datatable .ngx-datatable.single-selection .datatable-body-row.active.active:hover .datatable-row-group,
+omv-datatable .ngx-datatable.multi-selection .datatable-body-row.active.active:hover,
+omv-datatable .ngx-datatable.multi-selection .datatable-body-row.active.active:hover .datatable-row-group,
+omv-datatable .ngx-datatable.multi-click-selection .datatable-body-row.active.active:hover,
+omv-datatable .ngx-datatable.multi-click-selection .datatable-body-row.active.active:hover .datatable-row-group
+{ background-color:hsl(var(--hue) var(--sat) var(--lighth)) !important; }
+.ngx-datatable.single-selection .datatable-body-row.active.active:focus,
+.ngx-datatable.single-selection .datatable-body-row.active.active:focus .datatable-row-group,
+.ngx-datatable.multi-selection .datatable-body-row.active.active:focus,
+.ngx-datatable.multi-selection .datatable-body-row.active.active:focus .datatable-row-group,
+.ngx-datatable.multi-click-selection .datatable-body-row.active.active:focus,
+.ngx-datatable.multi-click-selection .datatable-body-row.active.active:focus .datatable-row-group
+{ background-color:hsl(var(--hue) var(--sat) var(--light)) !important; }
+.ngx-datatable:not(.cell-selection) .datatable-body-row:hover,
+.ngx-datatable:not(.cell-selection) .datatable-body-row:hover .datatable-row-group
+{ color: #000 !important; background-color:hsl(var(--hue) var(--sat) var(--light) / .30) !important; }
+.omv-dark-theme .ngx-datatable:not(.cell-selection) .datatable-body-row:hover,
+.omv-dark-theme .ngx-datatable:not(.cell-selection) .datatable-body-row:hover .datatable-row-group
+{ color: #fff !important; }
+.omv-dark-theme .mat-nav-list .mat-list-item:hover,
+.mat-nav-list .mat-list-item:hover
+{ background:hsl(var(--hue) var(--sat) var(--light) / .40) }
+.omv-dark-theme .mat-menu-item:hover,
+.mat-menu-item:hover
+{ background:hsl(var(--hue) var(--sat) var(--light) / .40) !important }
+.mat-option
+{ color:#000 !important; }
+.mat-option:hover:not(.mat-option-disabled), .mat-option:focus:not(.mat-option-disabled)
+{ background-color:hsl(var(--hue) var(--sat) var(--light) / .40) !important; color: #000 !important; }
+.mat-option.mat-selected:not(.mat-option-multiple):not(.mat-option-disabled)
+{background-color:hsl(var(--hue) var(--sat) var(--light) / .40) !important;color: #000 !important;}
+.omv-dark-theme .mat-option {color:#fff !important;}
+.omv-dark-theme .mat-option:hover:not(.mat-option-disabled), .omv-dark-theme .mat-option:focus:not(.mat-option-disabled)
+{background-color:hsl(var(--hue) var(--sat) var(--light) / .30) !important;color: #fff !important;}
+.omv-dark-theme .mat-option.mat-selected:not(.mat-option-multiple):not(.mat-option-disabled)
+{background-color:hsl(var(--hue) var(--sat) var(--light) / .30) !important;color: #fff !important;}
