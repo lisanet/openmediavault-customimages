@@ -1,0 +1,4 @@
+{% if config['customcolor'] -%}
+:root { --hue: {{ config['hue'] | int }}; --sat: 60%; --light: 70%; --lighth: 60%; }
+.omv-dark-theme { --sat: 50%; --light: 60%; --lighth: 50%; }
+{% endif -%}
