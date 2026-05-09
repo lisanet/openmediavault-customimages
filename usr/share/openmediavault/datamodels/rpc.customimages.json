@@ -28,6 +28,16 @@
           "darktheme": {
             "type": "boolean",
             "required": true
+          },
+          "customcolor": {
+            "type": "boolean",
+            "required": true
+          },
+          "hue": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 360,
+            "required": true
           }
         }
     }

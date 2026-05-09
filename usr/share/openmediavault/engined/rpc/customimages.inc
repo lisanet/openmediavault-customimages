@@ -59,6 +59,8 @@ class OMVRpcServiceCustomImages extends \OMV\Rpc\ServiceAbstract
         $object->set("shutdownimage",     "shutdown.jpg");
         $object->set("lighttheme",        "0");
         $object->set("darktheme",         "0");
+        $object->set("customcolor",        "0");
+        $object->set("hue",               "200");
         $db->set($object);
         return $object->getAssoc();
     }

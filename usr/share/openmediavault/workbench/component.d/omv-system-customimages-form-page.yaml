@@ -12,11 +12,55 @@ data:
         method: setSettings
     hints:
       - type: info
-        text: _("A set of images is provided in /usr/share/openmediavault/customimages/, named login.jpg, standby.jpg, and shutdown.jpg.<br/>Default images are in /usr/share/openmediavault/customimages/default/, named accordingly.")
+        text: _("A set of images is provided in '/usr/share/openmediavault/customimages/' and in '/usr/share/openmediavault/customimages/default/'.")
         dismissible: true
     fields:
       - type: divider
-        title: _('Image Folder')
+        title: _('Themes')
+      - type: checkbox
+        name: lighttheme
+        label: _('Light Theme')
+        hint: _('New light color theme.')
+        value: false
+      - type: checkbox
+        name: darktheme
+        label: _('Dark Theme')
+        hint: _('Slightly modified dark color theme.')
+        value: false
+      - type: divider
+        title: _('Colors')
+      - type: checkbox
+        name: customcolor
+        label: _('Custom Color')
+        hint: _('Enable custom color for themes. If disabled, the default openmediavault colors are used. You may need to reload the page and clear the browser cache to see the changes.')
+        value: false
+      - type: select
+        name: hue
+        label: _('Color')
+        hint: _('Color for both themes, light and dark.')
+        value: 200
+        modifiers:
+          - type: enabled
+            constraint:
+              operator: truthy
+              arg0:
+                prop: customcolor
+        store:
+          data:
+            - value: 0
+              text: _('Berry')
+            - value: 70
+              text: _('Citrus')
+            - value: 140
+              text: _('Lime')
+            - value: 200
+              text: _('Sky')
+            - value: 260
+              text: _('Plum')
+            - value: 330
+              text: _('Rose')
+      - type: divider
+        title: _('Wallpapers')
       - type: hidden
         name: rootfsref
         value: "79684322-3eac-11ea-a974-63a080abab18"
@@ -28,8 +72,6 @@ data:
         value: '/usr/share/openmediavault/customimages/'
         dirType: mntent
         dirRefIdField: rootfsref
-      - type: divider
-        title: _('Login Screen')
       - type: textInput
         name: loginimage
         label: _('Login screen image')
@@ -37,8 +79,6 @@ data:
         value: 'login.jpg'
         validators:
           required: true
-      - type: divider
-        title: _('Standby Screen')
       - type: textInput
         name: standbyimage
         label: _('Standby screen image')
@@ -46,8 +86,6 @@ data:
         value: 'standby.jpg'
         validators:
           required: true
-      - type: divider
-        title: _('Shutdown Screen')
       - type: textInput
         name: shutdownimage
         label: _('Shutdown screen image')
@@ -55,18 +93,6 @@ data:
         value: 'shutdown.jpg'
         validators:
           required: true
-      - type: divider
-        title: _('Mode Themes')
-      - type: checkbox
-        name: lighttheme
-        label: _('Light mode')
-        hint: _('New light color theme.')
-        value: false
-      - type: checkbox
-        name: darktheme
-        label: _('Dark mode')
-        hint: _('Modified dark color theme.')
-        value: false
     buttons:
       - template: submit
       - template: cancel
@@ -79,5 +105,5 @@ data:
           request:
             service: CustomImages
             method: resetSettings
-            successNotification: _("Images and Blend Modes have been reset to defaults.")
+            successNotification: _("Themes, Colors and Wallpapers have been reset to omv defaults.")
             successUrl: "/system"
