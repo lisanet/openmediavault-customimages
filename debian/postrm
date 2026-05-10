@@ -7,12 +7,12 @@ case "$1" in
   purge)
     # Activate trigger to rebuild workbench configuration files.
     dpkg-trigger update-workbench
-    omv_config_delete "/config/system/customimages"
+    omv_config_delete "/config/system/customthemes"
     # Remove generated CSS files and directories
     rm -f /var/www/openmediavault/theme.css
-    rm -f /var/lib/omv-customimages/styles-base.css
-    rm -f /var/lib/omv-customimages/styles-colors.css
-    rmdir -p /var/lib/omv-customimages 2>/dev/null || true
+    rm -f /var/lib/omv-customthemes/styles-base.css
+    rm -f /var/lib/omv-customthemes/styles-colors.css
+    rmdir -p /var/lib/omv-customthemes 2>/dev/null || true
     ;;
   remove|upgrade|failed-upgrade)
     dpkg-trigger update-workbench

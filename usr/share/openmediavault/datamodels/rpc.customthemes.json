@@ -1,7 +1,7 @@
 [
   {
     "type": "rpc",
-    "id": "rpc.customimages.setsettings",
+    "id": "rpc.customthemes.setsettings",
     "params": {
         "type": "object",
         "properties": {

@@ -1,7 +1,7 @@
 version: "1.0"
 type: navigation-item
 data:
-  path: 'system.customimages'
+  path: 'system.customthemes'
   text: 'Custom Themes'
   icon: 'mdi:image'
-  url: '/system/customimages'
+  url: '/system/customthemes'

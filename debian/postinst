@@ -9,13 +9,10 @@ case "$1" in
     dpkg-trigger update-workbench
     # Initialize and migrate configuration database.
     echo "Updating configuration database ..."
-    omv-confdbadm create "conf.system.customimages"
-    if [ -n "${2}" ]; then
-        omv-confdbadm migrate "conf.system.customimages" "${2}"
-    fi
+    omv-confdbadm create "conf.system.customthemes"
     # Deploy the configuration for autoshutdown services.
-    echo "Deploying customimages service configuration ..."
-    LC_ALL=C.UTF-8 omv-salt deploy run --no-color --quiet customimages
+    echo "Deploying customthemes service configuration ..."
+    LC_ALL=C.UTF-8 omv-salt deploy run --no-color --quiet customthemes
     ;;
   abort-upgrade|abort-remove|abort-deconfigure)
     ;;

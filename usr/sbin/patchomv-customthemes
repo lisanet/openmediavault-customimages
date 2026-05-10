@@ -15,8 +15,8 @@ change_image()
 
 # ---- main ----
 
-if [ -e "/etc/customimages.conf" ]; then
-    . /etc/customimages.conf
+if [ -e "/etc/customthemes.conf" ]; then
+    . /etc/customthemes.conf
     [ -n "$LOGIN_IMAGE" ] && change_image "login" "${IMAGE_FOLDER}/${LOGIN_IMAGE}"
     [ -n "$STANDBY_IMAGE" ] && change_image "standby" "${IMAGE_FOLDER}/${STANDBY_IMAGE}"
     [ -n "$SHUTDOWN_IMAGE" ] && change_image "shutdown" "${IMAGE_FOLDER}/${SHUTDOWN_IMAGE}"

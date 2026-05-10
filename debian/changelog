@@ -1,3 +1,10 @@
+openmediavault-customthemes (8.2.1-1) stable; urgency=low
+
+  * rename package
+  * add custom colors
+
+ -- Simone Karin Lehmann <skl@lisanet.de>  Sat, 09 May 2026 12:50:21 +0200
+
 openmediavault-customimages (8.1.1-1) stable; urgency=low
 
   * fix apt hook script to patch index.html

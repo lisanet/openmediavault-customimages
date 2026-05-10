@@ -1,13 +1,15 @@
-Source: openmediavault-customimages
+Source: openmediavault-customthemes
 Section: net
 Priority: optional
 Maintainer: Simone Karin Lehmann <skl@lisanet.de>
 Build-Depends: debhelper (>= 12)
 Standards-Version: 4.5.1
 
-Package: openmediavault-customimages
+Package: openmediavault-customthemes
 Architecture: all
 Depends: openmediavault (>= 8.1.1)
+Provides: openmediavault-customimages
+Replaces: openmediavault-customimages
+Breaks: openmediavault-customimages
 Description: OpenMediaVault Custom Images Plugin
-  Enables setting custom background images and blend modes for the login screen,
-  the standby screenand the shutdown screen.
+  Enables setting custom themes, colors and wallpaper images openmediavault.

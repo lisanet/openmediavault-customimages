@@ -1,6 +1,6 @@
-{% set config = salt['omv_conf.get']('conf.system.customimages') %}
+{% set config = salt['omv_conf.get']('conf.system.customthemes') %}
 
-customimages_themes:
+customthemes_create_theme_css:
   file.managed:
     - name: /var/www/openmediavault/theme.css
     - source:

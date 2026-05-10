@@ -1,18 +1,18 @@
 version: "1.0"
 type: component
 data:
-  name: omv-system-customimages-form-page
+  name: omv-system-customthemes-form-page
   type: formPage
   config:
     request:
-      service: CustomImages
+      service: CustomThemes
       get:
         method: getSettings
       post:
         method: setSettings
     hints:
       - type: info
-        text: _("A set of images is provided in '/usr/share/openmediavault/customimages/' and in '/usr/share/openmediavault/customimages/default/'.")
+        text: _("A set of images is provided in '/usr/share/openmediavault/customthemes/' and in '/usr/share/openmediavault/customthemes/default/'.")
         dismissible: true
     fields:
       - type: divider
@@ -69,7 +69,7 @@ data:
         name: imagefolder
         label: _('Custom images folder')
         hint: _('Absolute path to the folder containing the custom images, e.g., /srv/dev-disk-by-uuid-xxx/some/path/')
-        value: '/usr/share/openmediavault/customimages/'
+        value: '/usr/share/openmediavault/customthemes/'
         dirType: mntent
         dirRefIdField: rootfsref
       - type: textInput
@@ -103,7 +103,7 @@ data:
         execute:
           type: request
           request:
-            service: CustomImages
+            service: CustomThemes
             method: resetSettings
             successNotification: _("Themes, Colors and Wallpapers have been reset to omv defaults.")
             successUrl: "/system"

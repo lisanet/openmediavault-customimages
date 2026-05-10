@@ -1,15 +1,15 @@
 {
   "type": "config",
-  "id": "conf.system.customimages",
-  "title": "Custom Images",
+  "id": "conf.system.customthemes",
+  "title": "Custom Themes",
   "queryinfo": {
-    "xpath": "//system/customimages",
+    "xpath": "//system/customthemes",
     "iterable": false
   },
   "properties": {
     "imagefolder": {
       "type": "string",
-      "default": "/usr/share/openmediavault/customimages/default/"
+      "default": "/usr/share/openmediavault/customthemes/default/"
     },
     "loginimage": {
       "type": "string",

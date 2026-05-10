@@ -1,0 +1,1 @@
+DPkg::Post-Invoke {"[ -x /usr/sbin/patchomv-customthemes ] && /usr/sbin/patchomv-customthemes || true";};

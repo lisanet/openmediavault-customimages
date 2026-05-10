@@ -1,7 +1,7 @@
 #!/bin/bash
 
-colors="/var/lib/omv-customimages/styles-colors.css"
-styles_base="/var/lib/omv-customimages/styles-base.css"
+colors="/var/lib/omv-customthemes/styles-colors.css"
+styles_base="/var/lib/omv-customthemes/styles-base.css"
 styles_omv="$(find /var/www/openmediavault -type f -name "styles.*.css")"
 
 if cmp -s "$styles_base" "$styles_omv"; then
@@ -10,7 +10,7 @@ if cmp -s "$styles_base" "$styles_omv"; then
 fi
 
 echo "Updating styles-base CSS"
-mkdir -p /var/lib/omv-customimages
+mkdir -p /var/lib/omv-customthemes
 cp "$styles_omv" "$styles_base"
 
 tmp="$(mktemp -t css.XXXXXX)"

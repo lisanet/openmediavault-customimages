@@ -1,11 +1,12 @@
-etc/customimages.conf  etc/
+etc/customthemes.conf  etc/
 etc/apt/apt.conf.d/*  etc/apt/apt.conf.d/
 usr/sbin/*  usr/sbin/
-usr/share/openmediavault/customimages  usr/share/openmediavault/
+usr/share/openmediavault/customthemes  usr/share/openmediavault/
 usr/share/openmediavault/confdb/*  usr/share/openmediavault/confdb/
 usr/share/openmediavault/datamodels/*  usr/share/openmediavault/datamodels/
 usr/share/openmediavault/engined/*   usr/share/openmediavault/engined/
 usr/share/openmediavault/workbench/*  usr/share/openmediavault/workbench/
-srv/salt/omv/deploy/customimages/* srv/salt/omv/deploy/customimages/
+srv/salt/omv/deploy/customthemes/* srv/salt/omv/deploy/customthemes/
+var/www/openmediavault/assets/images/* var/www/openmediavault/assets/images/
 
 
