@@ -2,8 +2,10 @@ openmediavault-customthemes (8.2.1-1) stable; urgency=low
 
   * rename package
   * add custom colors
+  * redesigned plugin ui
+  * add missing logo for light theme
 
- -- Simone Karin Lehmann <skl@lisanet.de>  Sat, 09 May 2026 12:50:21 +0200
+ -- Simone Karin Lehmann <skl@lisanet.de>  Sun, 10 May 2026 10:58:30 +0200
 
 openmediavault-customimages (8.1.1-1) stable; urgency=low
 
