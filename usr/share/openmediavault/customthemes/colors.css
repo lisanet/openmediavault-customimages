@@ -51,3 +51,5 @@ omv-datatable .ngx-datatable.multi-click-selection .datatable-body-row.active.ac
 {background-color:hsl(var(--hue) var(--sat) var(--light) / .30) !important;color: #fff !important;}
 .omv-dark-theme .mat-option.mat-selected:not(.mat-option-multiple):not(.mat-option-disabled)
 {background-color:hsl(var(--hue) var(--sat) var(--light) / .30) !important;color: #fff !important;}
+.mat-card.alert-info { background-color:hsl(var(--hue) 40 var(--light)) !important;}
+.omv-dark-theme .mat-card.alert-info { background-color:hsl(var(--hue) 30 var(--light)) !important;}
