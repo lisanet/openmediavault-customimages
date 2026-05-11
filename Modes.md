@@ -1,18 +1,18 @@
-# Mode Themes
-
-This plugin includes a new light mode theme and a slightly adjusted dark mode theme.
+# Mode Themes and Colors
 
 To activate a theme, simply enable the corresponding checkbox and reload the page.
 
-## Light Mode Theme
+## Light Mode 
 
-![Light Mode sample 1](light_mode_1.jpg)
+The colors are: Berry, Citrus, Lime, Sky, Plum, Rose
 
-![Light Mode sample 2](light_mode_2.jpg)
+![Light Mode colors](light_mode_1.jpg)
+
 
 ## Dark Mode Theme
 
-![Dark Mode sample 1](dark_mode_1.jpg)
+The colors are: Berry, Citrus, Lime, Sky, Plum, Rose
 
-![Dark Mode sample 2](dark_mode_2.jpg)
+![Dark Mode colors](dark_mode_1.jpg)
+
 
