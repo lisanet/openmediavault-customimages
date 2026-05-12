@@ -7,3 +7,4 @@ debian/*.debhelper.log
 debian/*.debhelper
 debian/*substvars
 debhelper-build-stamp
+notes/
