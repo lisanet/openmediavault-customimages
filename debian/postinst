@@ -10,6 +10,9 @@ case "$1" in
     # Initialize and migrate configuration database.
     echo "Updating configuration database ..."
     omv-confdbadm create "conf.system.customthemes"
+    if [ -n "${2}" ]; then
+        omv-confdbadm migrate "conf.system.customthemes" "${2}"
+    fi
     # Deploy the configuration for autoshutdown services.
     echo "Deploying customthemes service configuration ..."
     LC_ALL=C.UTF-8 omv-salt deploy run --no-color --quiet customthemes

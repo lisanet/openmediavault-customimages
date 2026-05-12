@@ -27,6 +27,11 @@ data:
         label: _('Dark Theme')
         hint: _('Slightly modified dark color theme.')
         value: false
+      - type: checkbox
+        name: removecursor
+        label: _('Remove pixelated Amiga cursor')
+        hint: _('Remove the pixelated Amiga cursor and replace it with the default cursor of the browser. You may need to reload the page and clear the browser cache to see the changes.')
+        value: false
       - type: divider
         title: _('Colors')
       - type: checkbox

@@ -29,6 +29,10 @@
             "type": "boolean",
             "required": true
           },
+          "removecursor": {
+            "type": "boolean",
+            "required": true
+          },
           "customcolor": {
             "type": "boolean",
             "required": true

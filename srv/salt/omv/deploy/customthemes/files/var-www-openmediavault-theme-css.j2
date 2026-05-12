@@ -12,3 +12,7 @@
 {% if config['darktheme'] -%}
 .omv-dark-theme .mat-drawer-container { background-color: #3c4a53; }
 {% endif -%}
+{% if config['removecursor'] -%}
+.boot-loader {cursor:wait,auto;}
+.omv-cursor-amiga20-busy {cursor:wait,auto}
+{% endif -%}

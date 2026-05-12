@@ -11,6 +11,7 @@ if ! omv_config_exists "/config/system/customthemes"; then
   omv_config_add_key "/config/system/customthemes" "shutdownimage" "shutdown.jpg"
   omv_config_add_key "/config/system/customthemes" "lighttheme" "0"
   omv_config_add_key "/config/system/customthemes" "darktheme" "0"
+  omv_config_add_key "/config/system/customthemes" "removecursor" "0"
   omv_config_add_key "/config/system/customthemes" "customcolor" "0"
   omv_config_add_key "/config/system/customthemes" "hue" "200"
 fi
