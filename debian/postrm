@@ -3,10 +3,23 @@ set -e
 
 . /usr/share/openmediavault/scripts/helper-functions
 
+TARGET="/var/www/openmediavault/assets/images"
+PACKAGE="openmediavault-customthemes"
+
+remove_action() {
+  dpkg-trigger update-workbench
+  rm -f $TARGET/login.jpg
+  rm -f $TARGET/standby.jpg
+  rm -f $TARGET/shutdown.jpg
+  dpkg-divert --package "$PACKAGE" --remove --rename "$TARGET/login.jpg"
+  dpkg-divert --package "$PACKAGE" --remove --rename "$TARGET/standby.jpg"
+  dpkg-divert --package "$PACKAGE" --remove --rename "$TARGET/shutdown.jpg"
+}
+
 case "$1" in
   purge)
     # Activate trigger to rebuild workbench configuration files.
-    dpkg-trigger update-workbench
+    remove_action
     omv_config_delete "/config/system/customthemes"
     # Remove generated CSS files and directories
     rm -f /var/www/openmediavault/theme.css
@@ -14,7 +27,10 @@ case "$1" in
     rm -f /var/lib/omv-customthemes/styles-colors.css
     rmdir -p /var/lib/omv-customthemes 2>/dev/null || true
     ;;
-  remove|upgrade|failed-upgrade)
+  remove)
+    remove_action
+    ;;
+  upgrade|failed-upgrade)
     dpkg-trigger update-workbench
     ;;
   abort-upgrade|abort-remove|abort-deconfigure)

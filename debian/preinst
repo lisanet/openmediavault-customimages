@@ -1,0 +1,28 @@
+#!/bin/sh
+set -e
+
+. /usr/share/openmediavault/scripts/helper-functions
+
+TARGET="/var/www/openmediavault/assets/images"
+PACKAGE="openmediavault-customthemes"
+
+case "$1" in
+  install|upgrade)
+    # divert original wallpapers
+    if ! dpkg-divert --list "$TARGET/login.jpg" | grep -q "$PACKAGE"; then
+        dpkg-divert --package "$PACKAGE" --add --rename --divert "$TARGET/login.jpg.distrib"  "$TARGET/login.jpg"
+        dpkg-divert --package "$PACKAGE" --add --rename --divert "$TARGET/standby.jpg.distrib"  "$TARGET/standby.jpg"
+        dpkg-divert --package "$PACKAGE" --add --rename --divert "$TARGET/shutdown.jpg.distrib"  "$TARGET/shutdown.jpg"
+    fi
+
+    ;;
+  abort-upgrade)
+    ;;
+  *)
+    echo "preinst called with unknown argument '$1'" >&2
+    exit 1
+    ;;
+esac
+
+#DEBHELPER#
+exit 0

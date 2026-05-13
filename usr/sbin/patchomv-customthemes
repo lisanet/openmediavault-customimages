@@ -1,27 +1,5 @@
 #!/bin/bash
 
-change_image()
-{
-    local type="$1"
-    local image=$(echo "$2" | tr -s /)
-    [ ! -e "$image" ] && return
-    change=$(cmp "$image" "/var/www/openmediavault/assets/images/$type.jpg")
-    if [ -n "$change" ]; then
-        echo "Set custom $type background"
-        sudo cp "$image" "/var/www/openmediavault/assets/images/$type.jpg"
-    fi
-}
-
-
-# ---- main ----
-
-if [ -e "/etc/customthemes.conf" ]; then
-    . /etc/customthemes.conf
-    [ -n "$LOGIN_IMAGE" ] && change_image "login" "${IMAGE_FOLDER}/${LOGIN_IMAGE}"
-    [ -n "$STANDBY_IMAGE" ] && change_image "standby" "${IMAGE_FOLDER}/${STANDBY_IMAGE}"
-    [ -n "$SHUTDOWN_IMAGE" ] && change_image "shutdown" "${IMAGE_FOLDER}/${SHUTDOWN_IMAGE}"
-fi
-
 grep -q 'patchomv' "/var/www/openmediavault/index.html" && change=no || change=yes
 if [ "$change" = "yes" ]; then
     sudo sed -i -e 's|</head>|<!--patchomv--><link rel="stylesheet" href="/theme.css"></head>|' /var/www/openmediavault/index.html
