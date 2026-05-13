@@ -1,3 +1,14 @@
+openmediavault-customthemes (8.3.0-1) stable; urgency=low
+
+  * add option to remove the pixelated Amiga Cursor
+  * add missing color for file chooser list element
+  * new wallpaper for shutdown
+  * redesigned section for wallpapers. use checkbox instead of default folder
+  * a blank image name field will set the default image, so you don't need to change all images at once.
+  * many internal changes.
+
+ -- Simone Karin Lehmann <skl@lisanet.de>  Wed, 13 May 2026 21:46:49 +0200
+
 openmediavault-customthemes (8.2.2-1) stable; urgency=low
 
   * add color for the info banner
