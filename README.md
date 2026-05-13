@@ -2,7 +2,7 @@
 
 A plugin for **openmediavault 8.1.1+** that allows you to set a new light mode theme, a slightly modified dark mode theme, colored accent colors and custom wallpapers for the login, standby, and shutdown screens.
 
-The plugin uses an **APT hook** to ensure that your themes, colors and wallpapers remain applied even after openmediavault updates.
+The plugin uses an **APT hook** to ensure that your themes, colors remain applied even after openmediavault updates.
 
 ## Features
 
@@ -37,11 +37,7 @@ A set of images is included in:
 
 `/usr/share/openmediavault/customthemes`
 
-The original images from **openmediavault 8.2.2** are available in:
-
-`/usr/share/openmediavault/customthemes/default`
-
-To use custom images, simply specify the desired file path.
+To use custom images, simply specify the desired file path. Leave the name field blank to use the default images provided by openmediavault.
 
 New images should appear immediately. If they do not, clear your browser cache and reload the page.
 
@@ -59,13 +55,6 @@ To completely remove the plugin including configuration files and helper scripts
 
 ```
 sudo apt purge openmediavault-customthemes
-```
-
-Afterwards, reinstall openmediavault to restore the default themes, colors and images or wait for the next openmediavault update.
-To reinstall openmediavault manually:
-
-```
-sudo apt reinstall openmediavault
 ```
 
 ## Screenshot
