@@ -62,6 +62,7 @@ class OMVRpcServiceCustomThemes extends \OMV\Rpc\ServiceAbstract
         $object->set("removecursor",      "0");
         $object->set("customcolor",       "0");
         $object->set("hue",               "200");
+        $object->set("wallpapers",        "0");
         $db->set($object);
         return $object->getAssoc();
     }

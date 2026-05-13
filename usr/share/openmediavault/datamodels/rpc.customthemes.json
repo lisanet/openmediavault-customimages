@@ -11,15 +11,15 @@
           },
           "loginimage": {
             "type": "string",
-            "pattern": ".*[.](jpg|jpeg)$"
+            "pattern": "^$|^.*[.](jpg)$"
           },
           "standbyimage": {
             "type": "string",
-            "pattern": ".*[.](jpg|jpeg)$"
+            "pattern": "^$|^.*[.](jpg)$"
           },
           "shutdownimage": {
             "type": "string",
-            "pattern": ".*[.](jpg|jpeg)$"
+            "pattern": "^$|^.*[.](jpg)$"
           },
           "lighttheme": {
             "type": "boolean",
@@ -41,6 +41,10 @@
             "type": "number",
             "minimum": 0,
             "maximum": 360,
+            "required": true
+          },
+          "wallpapers": {
+            "type": "boolean",
             "required": true
           }
         }

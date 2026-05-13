@@ -12,7 +12,7 @@ data:
         method: setSettings
     hints:
       - type: info
-        text: _("A set of images is provided in '/usr/share/openmediavault/customthemes/' and in '/usr/share/openmediavault/customthemes/default/'.")
+        text: _('You may need to reload the page and clear the browser cache to see the changes.')
         dismissible: true
     fields:
       - type: divider
@@ -30,14 +30,14 @@ data:
       - type: checkbox
         name: removecursor
         label: _('Remove pixelated Amiga cursor')
-        hint: _('Remove the pixelated Amiga cursor and replace it with the default cursor of the browser. You may need to reload the page and clear the browser cache to see the changes.')
+        hint: _('Remove the pixelated Amiga cursor and replace it with the default cursor of the browser.')
         value: false
       - type: divider
         title: _('Colors')
       - type: checkbox
         name: customcolor
         label: _('Custom Color')
-        hint: _('Enable custom color for themes. If disabled, the default openmediavault colors are used. You may need to reload the page and clear the browser cache to see the changes.')
+        hint: _('Enable custom color for themes. If disabled, the default openmediavault colors are used.')
         value: false
       - type: select
         name: hue
@@ -66,38 +66,61 @@ data:
               text: _('Rose')
       - type: divider
         title: _('Wallpapers')
+      - type: checkbox
+        name: wallpapers
+        label: _('Custom Wallpapers')
+        hint: _("Enable custom wallpapers for login, standby and shutdown screens. A set of images is provided in '/usr/share/openmediavault/customthemes/' named 'login.jpg', 'standby.jpg' and 'shutdown.jpg'.")
+        value: false
       - type: hidden
         name: rootfsref
         value: "79684322-3eac-11ea-a974-63a080abab18"
         submitValue: false
       - type: folderBrowser
         name: imagefolder
-        label: _('Custom images folder')
-        hint: _('Absolute path to the folder containing the custom images, e.g., /srv/dev-disk-by-uuid-xxx/some/path/')
+        label: _('Custom wallpapers folder')
+        hint: _('Absolute path to the folder containing the custom wallpapers, e.g., /srv/dev-disk-by-uuid-xxx/some/path/')
         value: '/usr/share/openmediavault/customthemes/'
         dirType: mntent
         dirRefIdField: rootfsref
+        modifiers:
+          - type: enabled
+            constraint:
+              operator: truthy
+              arg0:
+                prop: wallpapers
       - type: textInput
         name: loginimage
         label: _('Login screen image')
-        hint: _('Filename of the JPEG image, e.g., login.jpg')
+        hint: _('Filename of the JPEG image, e.g., login.jpg'. Leave blank to use the default provided by openmediavault.')
         value: 'login.jpg'
-        validators:
-          required: true
+        modifiers:
+          - type: enabled
+            constraint:
+              operator: truthy
+              arg0:
+                prop: wallpapers
       - type: textInput
         name: standbyimage
         label: _('Standby screen image')
-        hint: _('Filename of the JPEG image, e.g., standby.jpg')
+        hint: _('Filename of the JPEG image, e.g., standby.jpg'. Leave blank to use the default provided by openmediavault.')
         value: 'standby.jpg'
-        validators:
-          required: true
+        modifiers:
+          - type: enabled
+            constraint:
+              operator: truthy
+              arg0:
+                prop: wallpapers
       - type: textInput
         name: shutdownimage
         label: _('Shutdown screen image')
-        hint: _('Filename of the JPEG image, e.g., shutdown.jpg')
+        hint: _('Filename of the JPEG image, e.g., shutdown.jpg'. Leave blank to use the default provided by openmediavault.')
         value: 'shutdown.jpg'
-        validators:
-          required: true
+        modifiers:
+          - type: enabled
+            constraint:
+              operator: truthy
+              arg0:
+                prop: wallpapers
     buttons:
       - template: submit
       - template: cancel

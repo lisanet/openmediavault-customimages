@@ -42,6 +42,10 @@
     "hue": {
       "type": "number",
       "default": 140
+    },
+    "wallpapers": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

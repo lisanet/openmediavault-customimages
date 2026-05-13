@@ -14,6 +14,7 @@ if ! omv_config_exists "/config/system/customthemes"; then
   omv_config_add_key "/config/system/customthemes" "removecursor" "0"
   omv_config_add_key "/config/system/customthemes" "customcolor" "0"
   omv_config_add_key "/config/system/customthemes" "hue" "200"
+  omv_config_add_key "/config/system/customthemes" "wallpapers" "0"
 fi
 
 exit 0
