@@ -53,7 +53,7 @@ class OMVRpcServiceCustomThemes extends \OMV\Rpc\ServiceAbstract
         $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
         $db = \OMV\Config\Database::getInstance();
         $object = $db->get("conf.system.customthemes");
-        $object->set("imagefolder",       "/usr/share/openmediavault/customthemes/default/");
+        $object->set("imagefolder",       "/usr/share/openmediavault/customthemes/");
         $object->set("loginimage",        "login.jpg");
         $object->set("standbyimage",      "standby.jpg");
         $object->set("shutdownimage",     "shutdown.jpg");
