@@ -1,6 +1,6 @@
-etc/customthemes.conf  etc/
 etc/apt/apt.conf.d/*  etc/apt/apt.conf.d/
 usr/sbin/*  usr/sbin/
+usr/share/omv-customthemes  usr/share/
 usr/share/openmediavault/customthemes  usr/share/openmediavault/
 usr/share/openmediavault/confdb/*  usr/share/openmediavault/confdb/
 usr/share/openmediavault/datamodels/*  usr/share/openmediavault/datamodels/
