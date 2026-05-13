@@ -19,7 +19,7 @@ customthemes_append_extra_styles:
   file.append:
     - name: /var/www/openmediavault/theme.css
     - sources: 
-        - /usr/share/openmediavault/customthemes/colors.css
+        - /usr/share/omv-customthemes/colors.css
         - /var/lib/omv-customthemes/styles-colors.css
     - onlyif: test -e /var/lib/omv-customthemes/styles-colors.css
     - require:
