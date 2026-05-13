@@ -35,9 +35,13 @@ omv-datatable .ngx-datatable.multi-click-selection .datatable-body-row.active.ac
 .omv-dark-theme .ngx-datatable:not(.cell-selection) .datatable-body-row:hover .datatable-row-group
 { color: #fff !important; }
 .omv-dark-theme .mat-nav-list .mat-list-item:hover,
-.mat-nav-list .mat-list-item:hover
+.omv-dark-theme .mat-list-option:hover
+{ background:hsl(var(--hue) var(--sat) var(--light) / .30) }
+.mat-nav-list .mat-list-item:hover,
+.mat-list-option:hover
 { background:hsl(var(--hue) var(--sat) var(--light) / .40) }
-.omv-dark-theme .mat-menu-item:hover,
+.omv-dark-theme .mat-menu-item:hover
+{ background:hsl(var(--hue) var(--sat) var(--light) / .30) !important }
 .mat-menu-item:hover
 { background:hsl(var(--hue) var(--sat) var(--light) / .40) !important }
 .mat-option
