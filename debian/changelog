@@ -1,3 +1,9 @@
+openmediavault-customthemes (8.3.1-1) stable; urgency=low
+
+  * fix removal of Amiga cursor
+
+ -- Simone Karin Lehmann <skl@lisanet.de>  Sun, 17 May 2026 13:56:57 +0200
+
 openmediavault-customthemes (8.3.0-2) stable; urgency=low
 
   * fix folder name on reset
